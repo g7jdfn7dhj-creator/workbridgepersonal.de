@@ -775,7 +775,7 @@
     var originalBtnText = btn.textContent;
     btn.textContent = '…';
 
-    fetch('https://formsubmit.co/ajax/workbridgepersonal@gmail.com', {
+    fetch('https://formsubmit.co/ajax/workbrigepersonal@gmail.com', {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: new FormData(form)
