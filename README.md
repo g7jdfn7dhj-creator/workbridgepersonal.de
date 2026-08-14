@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkBridge Personal — Auftragsausführung mit eigenem Team</title>
-<meta name="description" content="WorkBridge Personal übernimmt und führt Arbeiten für Unternehmen aus — von Lagerarbeiten bis zur Inbetriebnahme von Produktionslinien. Eigene Teams, faire Bezahlung, zuverlässige Ausführung.">
+<title>WorkBrige Personal — Auftragsausführung mit eigenem Team</title>
+<meta name="description" content="WorkBrige Personal übernimmt und führt Arbeiten für Unternehmen aus — von Lagerarbeiten bis zur Inbetriebnahme von Produktionslinien. Eigene Teams, faire Bezahlung, zuverlässige Ausführung.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
