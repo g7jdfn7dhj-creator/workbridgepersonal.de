@@ -697,9 +697,6 @@
           <div class="info-row"><span class="label" data-i18n="label.erreichbar">Erreichbar</span><span data-i18n="kontakt.erreichbarValue">Mo–Fr, 8:00–17:00 Uhr</span></div>
         </div>
         <form id="contactForm" autocomplete="on">
-          <input type="hidden" name="_subject" value="Neue Anfrage — WorkBridge Personal Website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
           <input type="text" name="_honey" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="audience">
             <label><input type="radio" name="audience" value="unternehmen" checked> <span data-i18n="form.audienceCompany">Ich bin ein Unternehmen</span></label>
@@ -775,7 +772,7 @@
     var originalBtnText = btn.textContent;
     btn.textContent = '…';
 
-    fetch('https://formsubmit.co/ajax/workbrigepersonal@gmail.com', {
+    fetch('https://formsubmit.co/ajax/workbridgepersonal@gmail.com', {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: new FormData(form)
