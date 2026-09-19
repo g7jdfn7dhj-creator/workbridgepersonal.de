@@ -753,6 +753,9 @@
     display:flex; align-items:center; justify-content:center;
   }
   .team-avatar-photo{object-fit:cover; display:block;}
+  .team-phone{margin-top:8px; font-size:14px;}
+  .team-phone a{color:var(--blue); text-decoration:none;}
+  .team-phone a:hover{text-decoration:underline;}
   .team-name{font-family:'Archivo',sans-serif; font-weight:800; font-size:16px; color:var(--ink);}
   .team-role{margin-top:6px; font-size:13.5px; color:var(--ink-soft);}
 
@@ -1264,9 +1267,10 @@
           <div class="team-role" data-i18n="team.role2">Geschäftsführer (Marketing)</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#fff" fill-opacity=".9"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="team-name placeholder" data-i18n="team.namePlaceholder">Vorname Nachname</div>
-          <div class="team-role placeholder" data-i18n="team.rolePlaceholder">Position</div>
+          <img class="team-avatar team-avatar-photo" src="team-alexander-zeiler.jpg" alt="Alexander Zeiler">
+          <div class="team-name">Alexander Zeiler</div>
+          <div class="team-role">Geschäftsführer (Mechaniker)</div>
+          <div class="team-phone"><a href="tel:+491731971326">+49 173 1971326</a></div>
         </div>
         <div class="team-card">
           <div class="team-avatar" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#fff" fill-opacity=".9"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -1303,6 +1307,7 @@
         <div class="contact-info">
           <div class="info-row"><span class="label" data-i18n="label.adresse">Adresse</span><span><span class="placeholder" data-i18n="kontakt.adresseValue">Straße Nr., PLZ Ort</span></span></div>
           <div class="info-row"><span class="label" data-i18n="word.email">E-Mail</span><span><a href="mailto:workbridgepersonal@gmail.com" style="color:inherit; text-decoration:none;">workbridgepersonal@gmail.com</a></span></div>
+          <div class="info-row"><span class="label" data-i18n="word.telefon">Telefon</span><span><a href="tel:+491731971326" style="color:inherit; text-decoration:none;">+49 173 1971326</a></span></div>
           <div class="info-row"><span class="label" data-i18n="label.erreichbar">Erreichbar</span><span data-i18n="kontakt.erreichbarValue">Mo–Fr, 8:00–17:00 Uhr</span></div>
 
           <div class="contact-cta">
