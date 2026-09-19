@@ -835,12 +835,6 @@
     margin-top:14px; padding:26px 24px;
     background:var(--ink); color:#DCE6EC;
     border-radius:4px; position:relative; overflow:hidden;
-    display:block; text-decoration:none; cursor:pointer;
-    transition:background .2s ease, transform .15s ease;
-  }
-  .contact-cta:hover{background:#243746;}
-  .contact-cta-phone{
-    display:block; color:#8FCB7E; font-size:18px; font-weight:600; letter-spacing:.02em;
   }
   .contact-cta::before{
     content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--ribbon);
@@ -1316,11 +1310,11 @@
           <div class="info-row"><span class="label" data-i18n="word.telefon">Telefon</span><span><a href="tel:+491731971326" style="color:inherit; text-decoration:none;">+49 173 1971326</a></span></div>
           <div class="info-row"><span class="label" data-i18n="label.erreichbar">Erreichbar</span><span data-i18n="kontakt.erreichbarValue">Mo–Fr, 8:00–17:00 Uhr</span></div>
 
-          <a class="contact-cta" href="tel:+491731971326" aria-label="Anrufen +49 173 1971326">
+          <div class="contact-cta">
             <span class="sec-no">→</span>
             <p data-i18n="kontakt.ctaText">Kurzfristiger Bedarf? Rufen Sie uns direkt an — meist können wir noch in derselben Woche ein Team stellen.</p>
-            <span class="contact-cta-phone">+49 173 1971326</span>
-          </a>
+            <a class="btn btn-green btn-call" href="tel:+491731971326">+49 173 1971326</a>
+          </div>
         </div>
         <form id="contactForm" autocomplete="on">
           <input type="text" name="_honey" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1744,14 +1738,27 @@
       span.addEventListener('animationend', function(){ span.remove(); });
     }, {passive:true});
 
-    // Call button: the phone animation plays, then the button returns
+    // Call button: ring animation, then open the phone dialer
     var call = document.querySelector('.btn-call');
     if (call) {
       var callBusy = false;
-      call.addEventListener('click', function(){
-        if (callBusy) return;
+      call.addEventListener('click', function(e){
+        var tel = call.getAttribute('href');
+        if (!tel || tel.indexOf('tel:') !== 0) return;
+        if (callBusy) {
+          e.preventDefault();
+          return;
+        }
+        // On reduced motion, let the native tel: link work immediately
+        if (prefersReduced) return;
+        e.preventDefault();
         callBusy = true;
-        playButtonClip(call, 'call', function(){ callBusy = false; });
+        call.classList.add('ringing');
+        playButtonClip(call, 'call', function(){
+          call.classList.remove('ringing');
+          callBusy = false;
+          window.location.href = tel;
+        });
       });
     }
   })();
