@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stundennachweis-v23';
+const CACHE_NAME = 'stundennachweis-v25';
 const PRECACHE = [
   './',
   './index.html',

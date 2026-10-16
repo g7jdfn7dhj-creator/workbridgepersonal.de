@@ -1471,11 +1471,18 @@
       </svg>
       <span data-nav="report"></span>
     </button>
+    <button class="nav-card" data-view="lager">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-5 9 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M7 21v-8h10v8M7 17h10"/>
+      </svg>
+      <span data-nav="lager"></span>
+    </button>
   </div>
 
   <div id="viewInput"></div>
   <div id="viewAll" style="display:none;"></div>
   <div id="viewReport" style="display:none;"></div>
+  <div id="viewLager" style="display:none;"></div>
 
   <div class="app-footer no-print">
     <span id="footName"></span>
@@ -1531,6 +1538,7 @@
       emptySheetsTitle:'No sheets', emptyFilterTitle:'No data for this filter',
       emptyFilterDesc:'Enter hours under “Employee input sheets”.', confirmDeleteBtn:'Delete?',
       navInput:'Employee input sheets', navAll:'All-time table', navReport:'Period statement',
+      navLager:"Warehouse", ebLager:"Warehouse · Parts", lagerTitle:"Warehouse", lagerSub:"Parts registry: part number, storage location and name.", lagerAdd:"Add / update part", lagerNum:"Part number", lagerLoc:"Location", lagerName:"Name", lagerSave:"Save", lagerFind:"Find part", lagerFindPh:"Type a part number…", lagerNotFound:"No part found", lagerAll:"All parts", lagerEmpty:"No parts saved yet", lagerDel:"Delete", lagerDelConfirm:"Delete this part?", lagerNeedNum:"Enter a part number", lagerSaved:"Saved", lagerUpdated:"Updated",
       inputTitle:'Employee input sheets',
       inputSub:'Each card is one employee timesheet. Hours entered here flow automatically into the table and the statement.',
       newSheet:'+ New sheet', sheetsTotal:'Sheets in total:',
@@ -1658,6 +1666,7 @@
       emptySheetsTitle:'Keine Tabellen', emptyFilterTitle:'Keine Daten für diesen Filter',
       emptyFilterDesc:'Stunden unter „Eingabetabellen Personal“ erfassen.', confirmDeleteBtn:'Löschen?',
       navInput:'Eingabetabellen Personal', navAll:'Tabelle über die gesamte Zeit', navReport:'Auswertung für Zeitraum',
+      navLager:"Lager", ebLager:"Lager · Teile", lagerTitle:"Lager", lagerSub:"Teileverzeichnis: Teilenummer, Lagerort und Bezeichnung.", lagerAdd:"Teil hinzufügen / aktualisieren", lagerNum:"Teilenummer", lagerLoc:"Lagerort", lagerName:"Bezeichnung", lagerSave:"Speichern", lagerFind:"Teil suchen", lagerFindPh:"Teilenummer eingeben…", lagerNotFound:"Kein Teil gefunden", lagerAll:"Alle Teile", lagerEmpty:"Noch keine Teile gespeichert", lagerDel:"Löschen", lagerDelConfirm:"Dieses Teil löschen?", lagerNeedNum:"Teilenummer eingeben", lagerSaved:"Gespeichert", lagerUpdated:"Aktualisiert",
       inputTitle:'Eingabetabellen Personal',
       inputSub:'Jede Karte ist ein Stundennachweis eines Mitarbeiters. Die Stunden fließen automatisch in Tabelle und Auswertung.',
       newSheet:'+ Neue Tabelle', sheetsTotal:'Tabellen insgesamt:',
@@ -1785,6 +1794,7 @@
       emptySheetsTitle:'Нет таблиц', emptyFilterTitle:'Нет данных по этому фильтру',
       emptyFilterDesc:'Внесите часы в разделе «Вводные таблицы персонала».', confirmDeleteBtn:'Удалить?',
       navInput:'Вводные таблицы персонала', navAll:'Таблица за все время', navReport:'Выписка за период',
+      navLager:"Склад", ebLager:"Склад · Детали", lagerTitle:"Склад", lagerSub:"Реестр деталей: номер детали, место хранения и название.", lagerAdd:"Добавить / обновить деталь", lagerNum:"Номер детали", lagerLoc:"Место", lagerName:"Название", lagerSave:"Сохранить", lagerFind:"Поиск детали", lagerFindPh:"Введите номер детали…", lagerNotFound:"Деталь не найдена", lagerAll:"Все детали", lagerEmpty:"Детали пока не сохранены", lagerDel:"Удалить", lagerDelConfirm:"Удалить эту деталь?", lagerNeedNum:"Введите номер детали", lagerSaved:"Сохранено", lagerUpdated:"Обновлено",
       inputTitle:'Вводные таблицы персонала',
       inputSub:'Каждая карточка — таблица часов одного работника. Данные автоматически попадают в сводку и выписку.',
       newSheet:'+ Новая таблица', sheetsTotal:'Всего таблиц:',
@@ -1912,6 +1922,7 @@
       emptySheetsTitle:'Aucune feuille', emptyFilterTitle:'Aucune donnée pour ce filtre',
       emptyFilterDesc:'Saisissez les heures sous « Feuilles du personnel ».', confirmDeleteBtn:'Supprimer ?',
       navInput:'Feuilles du personnel', navAll:'Tableau global', navReport:'Relevé de période',
+      navLager:"Entrepôt", ebLager:"Entrepôt · Pièces", lagerTitle:"Entrepôt", lagerSub:"Registre des pièces : référence, emplacement et désignation.", lagerAdd:"Ajouter / modifier une pièce", lagerNum:"Référence", lagerLoc:"Emplacement", lagerName:"Désignation", lagerSave:"Enregistrer", lagerFind:"Rechercher une pièce", lagerFindPh:"Saisir une référence…", lagerNotFound:"Aucune pièce trouvée", lagerAll:"Toutes les pièces", lagerEmpty:"Aucune pièce enregistrée", lagerDel:"Supprimer", lagerDelConfirm:"Supprimer cette pièce ?", lagerNeedNum:"Saisir une référence", lagerSaved:"Enregistré", lagerUpdated:"Mis à jour",
       inputTitle:'Feuilles du personnel',
       inputSub:'Chaque carte est le relevé d’un salarié. Les heures alimentent automatiquement le tableau et le relevé.',
       newSheet:'+ Nouvelle feuille', sheetsTotal:'Feuilles au total :',
@@ -2039,6 +2050,7 @@
       emptySheetsTitle:'Sin hojas', emptyFilterTitle:'Sin datos para este filtro',
       emptyFilterDesc:'Registre las horas en «Hojas de personal».', confirmDeleteBtn:'¿Eliminar?',
       navInput:'Hojas de personal', navAll:'Tabla global', navReport:'Extracto del periodo',
+      navLager:"Almacén", ebLager:"Almacén · Piezas", lagerTitle:"Almacén", lagerSub:"Registro de piezas: número de pieza, ubicación y nombre.", lagerAdd:"Añadir / actualizar pieza", lagerNum:"Número de pieza", lagerLoc:"Ubicación", lagerName:"Nombre", lagerSave:"Guardar", lagerFind:"Buscar pieza", lagerFindPh:"Escriba un número de pieza…", lagerNotFound:"Pieza no encontrada", lagerAll:"Todas las piezas", lagerEmpty:"Aún no hay piezas guardadas", lagerDel:"Eliminar", lagerDelConfirm:"¿Eliminar esta pieza?", lagerNeedNum:"Introduzca un número de pieza", lagerSaved:"Guardado", lagerUpdated:"Actualizado",
       inputTitle:'Hojas de personal',
       inputSub:'Cada tarjeta es el parte de un empleado. Las horas pasan solas a la tabla y al extracto.',
       newSheet:'+ Nueva hoja', sheetsTotal:'Hojas en total:',
@@ -2546,6 +2558,7 @@
     document.querySelector('[data-nav="input"]').textContent  = t('navInput');
     document.querySelector('[data-nav="all"]').textContent    = t('navAll');
     document.querySelector('[data-nav="report"]').textContent = t('navReport');
+    document.querySelector('[data-nav="lager"]').textContent  = t('navLager');
     const now = new Date();
     document.getElementById('footName').textContent = t('docTitle');
     document.getElementById('footDate').textContent =
@@ -2566,6 +2579,7 @@
       document.getElementById('viewInput').style.display  = currentView==='input'  ? '' : 'none';
       document.getElementById('viewAll').style.display    = currentView==='all'    ? '' : 'none';
       document.getElementById('viewReport').style.display = currentView==='report' ? '' : 'none';
+      document.getElementById('viewLager').style.display  = currentView==='lager'  ? '' : 'none';
       renderAll();
     });
   });
@@ -2580,6 +2594,7 @@
     if(headMode==='tools'){ renderHub('tools'); return; }
     if(currentView==='input') renderInput();
     else if(currentView==='all') renderAllTime();
+    else if(currentView==='lager') renderLager();
     else renderReport();
   }
 
@@ -3657,6 +3672,98 @@
   /* ================================================================
      VIEW 3 — period statement
      ================================================================ */
+  /* ================================================================
+     VIEW 4 — warehouse (parts registry), own storage key
+     ================================================================ */
+  const KEY_LAGER = 'timetracking-lager-parts';
+  let lagerParts = null;        // [{num, loc, name}]
+  let lagerQuery = '';
+  function lagerLoad(){
+    if(lagerParts) return lagerParts;
+    try{ const v = storage.get(KEY_LAGER).value; lagerParts = v ? JSON.parse(v) : []; }
+    catch(e){ lagerParts = []; }
+    if(!Array.isArray(lagerParts)) lagerParts = [];
+    return lagerParts;
+  }
+  function lagerStore(){ try{ storage.set(KEY_LAGER, JSON.stringify(lagerParts)); }catch(e){} }
+  const lagerNorm = s => String(s||'').trim().toLowerCase();
+  function lagerMatches(q){
+    q = lagerNorm(q); if(!q) return [];
+    const exact = lagerParts.filter(p=>lagerNorm(p.num)===q);
+    if(exact.length) return exact;
+    return lagerParts.filter(p=>lagerNorm(p.num).startsWith(q))
+      .sort((a,b)=>String(a.num).localeCompare(String(b.num),undefined,{numeric:true}));
+  }
+  function lagerResultHtml(){
+    if(!lagerNorm(lagerQuery)) return '';
+    const m = lagerMatches(lagerQuery);
+    if(!m.length) return '<div class="empty"><div class="empty-title">'+esc(t('lagerNotFound'))+'</div></div>';
+    return '<table class="kv lager-res">'+m.map(p=>
+      '<tr><th>'+esc(t('lagerNum'))+'</th><td><b>'+esc(p.num)+'</b></td></tr>'+
+      '<tr><th>'+esc(t('lagerLoc'))+'</th><td>'+esc(p.loc)+'</td></tr>'+
+      '<tr><th>'+esc(t('lagerName'))+'</th><td>'+esc(p.name)+'</td></tr>'
+    ).join('<tr><td colspan="2"><hr style="border:none;border-top:1px solid var(--line,#ccc);margin:2px 0;"></td></tr>')+'</table>';
+  }
+  function renderLager(){
+    const host = document.getElementById('viewLager');
+    lagerLoad();
+    const list = lagerParts.slice().sort((a,b)=>String(a.num).localeCompare(String(b.num),undefined,{numeric:true}));
+    host.innerHTML = viewHead('ebLager','lagerTitle')+
+      '<p class="view-sub">'+esc(t('lagerSub'))+'</p>'+
+      '<div class="flab" style="margin:10px 0 4px;">'+esc(t('lagerAdd'))+'</div>'+
+      '<div class="toolbar no-print">'+
+        '<span class="fpair" style="flex:1 1 140px;"><span class="flab">'+esc(t('lagerNum'))+'</span><input type="text" id="lgNum" autocomplete="off"></span>'+
+        '<span class="fpair" style="flex:1 1 140px;"><span class="flab">'+esc(t('lagerLoc'))+'</span><input type="text" id="lgLoc" autocomplete="off"></span>'+
+        '<span class="fpair" style="flex:2 1 200px;"><span class="flab">'+esc(t('lagerName'))+'</span><input type="text" id="lgName" autocomplete="off"></span>'+
+        '<button class="btn primary" id="lgSave" style="align-self:flex-end;">'+esc(t('lagerSave'))+'</button>'+
+      '</div>'+
+      '<div id="lgMsg" class="view-sub" style="min-height:1.2em;"></div>'+
+      '<div class="toolbar no-print">'+
+        '<span class="fpair" style="flex:1 1 240px;"><span class="flab">'+esc(t('lagerFind'))+'</span><input type="text" id="lgFind" autocomplete="off" placeholder="'+esc(t('lagerFindPh'))+'" value="'+esc(lagerQuery)+'"></span>'+
+      '</div>'+
+      '<div id="lgResult">'+lagerResultHtml()+'</div>'+
+      '<div class="flab" style="margin:14px 0 4px;">'+esc(t('lagerAll'))+' ('+list.length+')</div>'+
+      (list.length ?
+        '<table class="az lager-list"><thead><tr><th>'+esc(t('lagerNum'))+'</th><th>'+esc(t('lagerLoc'))+'</th><th>'+esc(t('lagerName'))+'</th><th class="no-print"></th></tr></thead><tbody>'+
+        list.map(p=>'<tr><td><b>'+esc(p.num)+'</b></td><td>'+esc(p.loc)+'</td><td>'+esc(p.name)+'</td>'+
+          '<td class="no-print" style="width:1%;white-space:nowrap;"><button class="btn ghost" data-lgdel="'+esc(p.num)+'">'+esc(t('lagerDel'))+'</button></td></tr>').join('')+
+        '</tbody></table>'
+        : emptyBox(t('lagerEmpty'),''));
+    wireLager(host); wireHeadTools(host);
+  }
+  function wireLager(host){
+    const num = host.querySelector('#lgNum'), loc = host.querySelector('#lgLoc'), nm = host.querySelector('#lgName');
+    const msg = host.querySelector('#lgMsg');
+    function doSave(){
+      const n = num.value.trim();
+      if(!n){ msg.textContent = t('lagerNeedNum'); num.focus(); return; }
+      const ex = lagerParts.find(p=>lagerNorm(p.num)===lagerNorm(n));
+      if(ex){ ex.num = n; ex.loc = loc.value.trim(); ex.name = nm.value.trim(); }
+      else lagerParts.push({ num:n, loc:loc.value.trim(), name:nm.value.trim() });
+      lagerStore();
+      renderLager();
+      const m = document.getElementById('lgMsg'); if(m) m.textContent = t(ex ? 'lagerUpdated' : 'lagerSaved')+': '+n;
+      const f = document.getElementById('lgNum'); if(f) f.focus();
+    }
+    host.querySelector('#lgSave').addEventListener('click', doSave);
+    [num,loc,nm].forEach(i=>i.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); doSave(); } }));
+    num.addEventListener('input', ()=>{          // prefill when editing an existing part
+      const ex = lagerParts.find(p=>lagerNorm(p.num)===lagerNorm(num.value));
+      if(ex){ loc.value = ex.loc; nm.value = ex.name; }
+    });
+    const find = host.querySelector('#lgFind');
+    find.addEventListener('input', ()=>{
+      lagerQuery = find.value;
+      host.querySelector('#lgResult').innerHTML = lagerResultHtml();
+    });
+    host.querySelectorAll('[data-lgdel]').forEach(b=>b.addEventListener('click', ()=>{
+      const n = b.dataset.lgdel;
+      if(!confirm(t('lagerDelConfirm')+'\n'+n)) return;
+      lagerParts = lagerParts.filter(p=>p.num!==n);
+      lagerStore(); renderLager();
+    }));
+  }
+
   let repFrom = '', repTo = '';
 
   function renderReport(){
@@ -4102,6 +4209,7 @@
   function invoiceHost(){
     if(currentView==='all') return document.getElementById('viewAll');
     if(currentView==='report') return document.getElementById('viewReport');
+    if(currentView==='lager') return document.getElementById('viewLager');
     return document.getElementById('viewInput');
   }
   function emptyHubTile(){
@@ -4112,24 +4220,12 @@
     const tiles = [];
     if(kind==='journal'){
       tiles.push(
-        '<button class="hub-tile" type="button" data-hubitem="faktura">'+
-          '<span class="hub-mark">'+FE_MARK+'</span>'+
-          '<span class="hub-label">'+esc(t('faktura'))+'</span>'+
-        '</button>'
-      );
-      tiles.push(
         '<button class="hub-tile" type="button" data-hubitem="staff">'+
           '<img src="staff-icon.png" alt="">'+
           '<span class="hub-label">'+esc(t('staffJournal'))+'</span>'+
         '</button>'
       );
-      tiles.push(
-        '<button class="hub-tile" type="button" data-hubitem="company">'+
-          '<img src="company-icon.png" alt="">'+
-          '<span class="hub-label">'+esc(t('coMenu'))+'</span>'+
-        '</button>'
-      );
-      tiles.push(emptyHubTile());
+      tiles.push(emptyHubTile(), emptyHubTile(), emptyHubTile());
     } else {
       tiles.push(
         '<button class="hub-tile" type="button" data-hubitem="calc">'+
