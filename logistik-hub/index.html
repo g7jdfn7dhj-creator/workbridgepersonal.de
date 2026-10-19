@@ -1,6 +1,6 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Logistik-Hub</title>
-<meta name="app-version" content="lhub-pwa-v5">
+<meta name="app-version" content="lhub-pwa-v5-1">
 <link rel="stylesheet" href="./fonts/fonts.css">
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#161d26">
@@ -43,6 +43,7 @@ h1 small{font-weight:400;color:var(--mut);letter-spacing:.06em;font-size:13px;ma
 #stage{flex:1;position:relative;min-height:0;min-width:0;touch-action:none;cursor:grab;overflow:hidden}
 #stage canvas{display:block;width:100%;height:100%}
 .legend{position:absolute;top:10px;left:max(12px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:3px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);pointer-events:none;text-shadow:0 1px 2px #0008}
+.legend{background:rgba(14,18,24,.72);padding:6px 9px 6px 8px;border:1px solid rgba(255,255,255,.08);color:#c9d1da}
 .legend i{display:inline-block;width:9px;height:9px;margin-right:6px}
 #warn{position:absolute;top:10px;right:12px;display:flex;flex-direction:column;align-items:flex-end;gap:4px;pointer-events:none;max-width:60%}
 #warn div{background:rgba(30,39,50,.92);border-left:3px solid var(--warn);color:var(--fg);font-size:12px;letter-spacing:.04em;padding:3px 8px}
@@ -291,17 +292,6 @@ td.wrap{white-space:normal}
 .pic{width:30px;height:30px;object-fit:contain;vertical-align:middle;flex:none}
 .pic.lg{width:44px;height:44px}
 td.ic{width:34px;padding:1px 2px}
-.cls{display:inline-block;min-width:2.2em;text-align:center;font-family:var(--f-disp);font-size:11px;letter-spacing:.06em;padding:0 5px;border:1px solid;border-radius:2px;text-transform:uppercase}
-.cls.S{color:#7fd8c9;border-color:#2f8f80}.cls.M{color:#f2c46b;border-color:#8a6a2a}.cls.L{color:#c9a6f5;border-color:#6d4d86}.cls.U{color:#8d9bab;border-color:#4a5663;border-style:dashed}
-.clsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
-.clsbox{display:flex;gap:8px;align-items:center;background:var(--panel2);border:1px solid var(--line2);padding:6px 8px;cursor:pointer}
-.clsbox b{font-family:var(--f-mono);font-weight:500;font-size:16px;display:block}.clsbox span{font-size:12px;color:var(--mut)}
-.szsel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-.szsel label{display:flex;flex-direction:column;align-items:center;gap:2px;border:1px solid var(--line);background:var(--panel2);padding:6px 2px;cursor:pointer;font-size:12px;text-align:center;min-height:44px}
-.szsel label{position:relative}.szsel input{position:absolute;opacity:0;pointer-events:none;left:0;top:0;width:1px;height:1px;margin:0}
-.szsel label:has(input:checked){border-color:var(--amber);box-shadow:inset 0 0 0 1px var(--amber);color:var(--fg)}
-.szsel label:has(input:focus-visible){outline:2px solid var(--amber)}
-.szsel img{width:40px;height:40px;object-fit:contain}
 .eform .full{grid-column:1/-1}
 .locw{display:flex;gap:6px}.locw input{flex:1;min-width:0}
 #slotCard{position:absolute;right:max(10px,env(safe-area-inset-right,0px));bottom:12px;z-index:7;width:min(360px,calc(100% - 20px));max-height:calc(100% - 70px);overflow:auto;background:rgba(30,39,50,.97);border:1px solid var(--line);border-top:3px solid var(--amber);padding:10px 12px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
@@ -315,7 +305,6 @@ td.ic{width:34px;padding:1px 2px}
 .deco-note{font-size:11px;color:var(--mut)}
 #qualSel{min-height:36px}
 @media (max-width:900px){#slotCard{bottom:8px;max-height:calc(100% - 16px)}}
-@media (max-width:600px){.szsel img{width:34px;height:34px}}
 @media print{#slotCard{display:none!important}td.ic img{width:18px;height:18px}}
 
 #impDlg{position:fixed;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;background:rgba(8,11,15,.62);padding:14px}
@@ -328,13 +317,11 @@ td.ic{width:34px;padding:1px 2px}
 body[data-scene="campus"] #animQ{top:auto;bottom:14px}
 .mrow select{background:var(--panel2);color:var(--fg);border:1px solid var(--line);padding:4px 6px;font:inherit}
 #qualNow{color:var(--mut);font-size:12px}
-.clsgrid .clsbox{display:flex;gap:8px;align-items:center;border:1px solid var(--line2);background:var(--panel2);padding:6px 8px;cursor:pointer}
-.clsgrid .clsbox b{display:block;font-weight:600}.clsgrid .clsbox span{color:var(--mut);font-size:12px}
 @media (max-width:900px){.ptop{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.ptop::-webkit-scrollbar{display:none}.ptop>button{flex:none}}
 @media (max-width:600px){#animQ{font-size:11.5px;max-width:calc(100% - 20px);white-space:normal}}
 </style></head><body data-scene="campus">
 <header class="pad">
-  <h1>Logistik-Hub<span class="r4"> v5</span><small id="sub"></small></h1>
+  <h1>Logistik-Hub<span class="r4"> v5.1</span><small id="sub"></small></h1>
   <button id="addBtn" data-entry="new" data-tip="ux_addTip"><span class="ic" aria-hidden="true">+</span><span class="lbl" data-t="ux_add"></span></button>
   <div class="hright"><button id="installBtn" class="pri" hidden>⤓ Установить приложение</button><div class="clock" id="clock"></div>
     <div class="seg sm" id="lang"><button data-l="ru">RU</button><button data-l="de">DE</button></div><button id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu" data-tip="ux_menu">☰</button></div>
@@ -385,14 +372,14 @@ body[data-scene="campus"] #animQ{top:auto;bottom:14px}
     <div class="qcard" id="ovStart" hidden><h3 data-t="ux_startH"></h3><div class="note" data-t="ux_startTxt" style="margin:0 0 8px"></div><div class="rowb"><button class="pri big" data-entry="new" data-t="ux_addData2"></button><button data-go="data" data-t="ux_loadFile"></button></div></div>
     <div class="sec"><h3 data-t="alertsH"></h3><div class="alerts" id="alerts"></div></div>
     <div class="sec"><h3 data-t="kpiH"></h3><div class="kpis" id="kpis"></div></div>
-    <div class="sec"><h3 data-t="clsH"></h3><div class="clsgrid" id="clsBox"></div></div>
     <div class="sec"><h3 data-t="recentH"></h3><div class="tw"><table><tbody id="recentT"></tbody></table></div></div>
   </div>
   <div class="tabc" id="tab-stock" role="tabpanel" hidden>
     <input type="search" id="stockQ" data-ph="s_ph" autocomplete="off" spellcheck="false" aria-label="search">
-    <div class="rowb flt" style="margin:8px 0"><div class="seg sm" id="stockFilt"><button data-f="all" aria-pressed="true" data-t="fa_all"></button><button data-f="S">S</button><button data-f="M">M</button><button data-f="L">L</button><button data-f="U" data-t="clsShort_U"></button><button data-f="noloc" data-t="s_noloc"></button></div><span class="mut" id="stockCnt"></span>
+    <div class="rowb flt" style="margin:8px 0"><div class="seg sm" id="stockFilt"><button data-f="all" aria-pressed="true" data-t="fa_all"></button><button data-f="noloc" data-t="s_noloc"></button><button data-f="noqty" data-t="s_noqty"></button></div><span class="mut" id="stockCnt"></span>
       <button class="pri" data-entry="new" data-t="ux_addData2"></button></div>
-    <div class="tw"><table><thead><tr><th></th><th class="l" data-t="c_num"></th><th class="l" data-t="c_name"></th><th class="l" data-t="c_loc"></th><th data-t="c_qty"></th><th class="l" data-t="c_cls"></th><th class="l" data-t="c_src"></th><th></th></tr></thead><tbody id="stockT"></tbody></table></div>
+    <div class="note" id="stockStat" role="status"></div>
+    <div class="tw"><table><thead><tr><th></th><th class="l" data-t="c_num"></th><th class="l" data-t="c_name"></th><th class="l" data-t="c_loc"></th><th data-t="c_qty"></th><th class="l" data-t="c_src"></th><th></th></tr></thead><tbody id="stockT"></tbody></table></div>
   </div>
   <div class="tabc" id="tab-entry" role="tabpanel" hidden>
     <div class="sec"><h3 data-t="entryH"></h3><div class="note" data-t="entryNote"></div></div>
@@ -401,7 +388,6 @@ body[data-scene="campus"] #animQ{top:auto;bottom:14px}
       <label for="ef-name" data-t="ef_name"></label><input type="text" id="ef-name" autocomplete="off" enterkeyhint="next">
       <label for="ef-loc" data-t="ef_loc"></label><div class="locw"><input type="text" id="ef-loc" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="R1-05-2" enterkeyhint="next"><div class="note" id="locNote"></div></div>
       <label for="ef-qty" data-t="ef_qty"></label><input type="number" id="ef-qty" min="0" step="1" inputmode="numeric" data-ph="notSetS">
-      <span class="full" data-t="ef_size"></span><div class="szsel full" id="szSel" role="radiogroup"></div>
     </div>
     <datalist id="numList"></datalist>
     <div class="rowb"><button id="entSave" class="pri big"></button><button id="entCancel" data-t="e_cancel" hidden></button><button id="entDel" class="danger" data-t="del" hidden></button></div><div class="note" id="entStat" role="status"></div>
@@ -450,23 +436,23 @@ ru:{
  sub_hub:'Склад · учёт в деталях',sub_campus:'Территория завода',
  ban_tag:'Склад',ban_txt:'Запас ведётся в деталях (шт.). Меняется только вводом в программе и импортом (Arbeitzeit — только чтение). Машины, паллеты и погрузчики — лишь анимация этих изменений.',ban_last:'Последнее изменение',
  tab_ov:'Обзор',tab_stock:'Склад',tab_entry:'Ввод',tab_data:'Данные',tab_params:'Параметры',tab_report:'Отчёт',
- h_pos:'Позиций',h_qty:'Штук на складе',h_slots:'Ячейки занято',h_cls:'S / M / L',h_ucls:'Без класса',h_noloc:'Без ячейки',
- kpiH:'Показатели склада',alertsH:'Тревоги',noAlerts:'Нет отклонений от заданных порогов.',clsH:'По классу размера',recentH:'Последние изменения',
+ h_pos:'Позиций',h_qty:'Штук на складе',h_slots:'Ячейки занято',h_noloc:'Без ячейки',
+ kpiH:'Показатели склада',alertsH:'Тревоги',noAlerts:'Нет отклонений от заданных порогов.',recentH:'Последние изменения',
  k_pos:'Позиций (номеров деталей)',k_qty:'Штук на складе (сумма заданных)',k_noqty:'Позиций без количества',k_zero:'Позиций с количеством 0',
- k_occ:'Заполнение ячеек',k_slots:'Занято ячеек',k_free:'Свободно ячеек',k_noloc:'Без ячейки стеллажа',k_ucls:'Без класса размера',k_multi:'Ячеек с несколькими деталями',
+ k_occ:'Заполнение ячеек',k_slots:'Занято ячеек',k_free:'Свободно ячеек',k_noloc:'Без ячейки стеллажа',k_multi:'Ячеек с несколькими деталями',
  u_pcs:'шт.',u_pos:'поз.',thr:'порог',notSet:'не задано',notSetS:'не задано',
- cls_S:'Маленькие',cls_M:'Средние',cls_L:'Большие',cls_U:'Без класса',clsShort_U:'—',
- per_pos:'поз.',
+ 
+ 
  st_h:'Хранение данных',
- stockH:'Запас на складе',stockNote:'Каждая строка — номер детали, ячейка, количество в штуках и класс размера. Нажмите на строку — камера покажет ячейку.',
- s_ph:'Поиск: номер, название, место…',s_all:'Все',s_noloc:'без ячейки',s_cnt:'Показано',
- c_ic:'',c_num:'Номер детали',c_name:'Название',c_loc:'Место',c_qty:'Кол-во',c_cls:'Класс',c_src:'Источник',
+ 
+ s_ph:'Поиск: номер, название, место…',s_noloc:'без ячейки',
+ c_num:'Номер детали',c_name:'Название',c_loc:'Место',c_qty:'Кол-во',c_src:'Источник',
  empty_stock:'Склад пуст — введите деталь вручную или загрузите файл / данные Arbeitzeit.',nf:'Ничего не найдено',
  entryH:'Деталь: ввод и изменение',entryNote:'Изменения сохраняются сразу и только на этом устройстве. Если номер уже есть — откроется эта деталь для изменения.',
- ef_num:'Номер детали',ef_name:'Название',ef_loc:'Место (R1-05-2)',ef_qty:'Количество, шт.',ef_size:'Класс размера',
+ ef_num:'Номер детали',ef_name:'Название',ef_loc:'Место (R1-05-2)',ef_qty:'Количество, шт.',
  loc_hint:'Ряд 1–4, секция 1–20, ярус 1–3. Другое место допускается, но в 3D не показывается.',loc_off:'Место вне стеллажей — в 3D не показывается.',loc_ok:'Ячейка стеллажа',
- e_add:'Добавить деталь',e_update:'Сохранить изменения',e_cancel:'Отмена',e_del:'Удалить деталь',e_added:'Добавлено',e_updated:'Изменено',e_deleted:'Удалено',
- e_needNum:'Укажите номер детали',e_dup:'Деталь с таким номером уже есть',e_exists:'Деталь уже есть — открыта для изменения',e_recent:'Последние ручные изменения',e_none:'Ручных изменений пока нет',
+ e_add:'Добавить деталь',e_update:'Сохранить изменения',e_cancel:'Отмена',e_added:'Добавлено',e_updated:'Изменено',e_deleted:'Удалено',
+ e_needNum:'Укажите номер детали',e_dup:'Деталь с таким номером уже есть',e_exists:'Деталь уже есть — открыта для изменения',e_none:'Ручных изменений пока нет',
  del_confirm:'Удалить деталь «%s» со склада?',edit:'Изм.',del:'Удалить',badVal:'Недопустимое значение',
  dataH:'Данные',dataNote:'Источники запаса: ручной ввод, CSV/JSON-файлы и Arbeitzeit (только чтение — данные идут только из Arbeitzeit сюда). Всё хранится локально на этом устройстве.',
  az_h:'Arbeitzeit — только чтение',az_sync:'Синхронизировать с Arbeitzeit',az_csv:'Импорт CSV склада Arbeitzeit (Lager)…',az_urlH:'Адрес для чтения (GET, необязательно)',
@@ -477,60 +463,60 @@ ru:{
  az_none:'деталей не найдено',az_skip:'пропущено строк',az_detected:'распознан CSV склада Arbeitzeit',
  fa_get:'Загрузить (GET)',fa_auto:'Автообновление (только добавить/обновить)',fa_file:'Импорт файлов CSV / JSON',fa_pick:'Выбрать файлы…',fa_loading:'Загрузка…',fa_err:'Ошибка',
  fa_cors:'Сайт не разрешил чтение из браузера (CORS) или недоступен.',fa_badurl:'Укажите адрес http(s)://',
- srcH:'Источники в запасе',src_az:'Arbeitzeit',src_file:'файл',src_in:'ввод',fa_total:'Всего позиций',fa_last:'Последнее изменение',fa_clear:'Удалить позиции этого источника',fa_all:'Все',
+ src_az:'Arbeitzeit',src_file:'файл',src_in:'ввод',fa_total:'Всего позиций',fa_last:'Последнее изменение',fa_clear:'Удалить позиции этого источника',fa_all:'Все',
  clr_src_confirm:'Удалить со склада все позиции источника «%s» (%n)?',
  bk_h:'Резервная копия: конфигурация + данные',bk_exp:'Экспорт всего (JSON)',bk_imp:'Импорт всего (JSON)',clr_all:'Очистить всё',bk_bad:'не файл резервной копии Logistik-Hub',bk_ok:'Восстановлено',bk_err:'Ошибка импорта',
  clr_confirm:'Удалить ВСЕ данные и настройки Logistik-Hub из этого браузера?\nДанные Arbeitzeit не затрагиваются.',clr_done:'Всё очищено.',
  bk_note:'Очистка удаляет только ключи Logistik-Hub (lhub.r4.*) в этом браузере. Arbeitzeit не затрагивается.',
  mig_note:'Данные версии 4 перенесены %t: деталей %p (из записей запаса %s; паллеты не пересчитываются в штуки — количество «не задано»). Удалено записей производства/фур/заказов: %d. Исходная копия v4 сохранена локально и входит в экспорт JSON.',
  imp_h:'Импорт: как применить файл?',imp_src:'Источник',imp_rows:'Строк с номером детали',imp_new:'Новых деталей',imp_upd:'Изменятся',imp_same:'Без изменений',imp_up:'Количество увеличится',imp_down:'Количество уменьшится',imp_miss:'Есть на складе, но нет в файле',
- imp_add:'Только добавить / обновить — ничего не удалять',imp_full:'Полная инвентаризация — удалить отсутствующие в файле (%n)',imp_apply:'Применить',imp_cancel:'Отмена',imp_done:'Импорт применён',imp_cancelled:'Импорт отменён',imp_removed:'удалено',imp_skip:'пропущено строк без номера',
- imp_noQty:'В файле нет количества — у существующих деталей оно не меняется.',imp_noSize:'В файле нет класса размера — существующие классы сохраняются.',
+ imp_add:'Только добавить / обновить — ничего не удалять',imp_full:'Полная инвентаризация — удалить отсутствующие в файле (%n)',imp_apply:'Применить',imp_done:'Импорт применён',imp_cancelled:'Импорт отменён',imp_removed:'удалено',imp_skip:'пропущено строк без номера',
+ imp_noQty:'В файле нет количества — у существующих деталей оно не меняется.',
  paramsH:'Параметры',pr_save:'Пустое поле = «не задано». Значения вводите вы; сохраняются на этом устройстве.',pr_exp:'Экспорт JSON',pr_imp:'Импорт JSON',pr_impOk:'Параметры загружены',pr_impErr:'Ошибка файла параметров',
  g_thr:'Пороги тревог',g_misc:'Прочее',p_th_rackHi:'Заполнение ячеек: верхний порог',p_th_rackLo:'Заполнение ячеек: нижний порог',p_arbAutoS:'Интервал автообновления (GET)',un_pct:'%',un_s:'с',
- g_layout:'Планировка (геометрия, не данные)',layNote:'Размеры 3D-макета: сколько ячеек есть на схеме.',lay_rack:'Ячеек стеллажей',lay_fmt:'Формат места',lay_docks:'Рампы приёмки (анимация)',
- rep_title:'Отчёт по складу',rep_print:'Печать / PDF',rep_csv:'Экспорт CSV (формат Lager + количество + класс)',rep_gen:'Сформирован',rep_sources:'Источники',rep_kpi:'Показатель',rep_val:'Значение',rep_list:'Запас по местам',rep_noloc:'Детали без ячейки стеллажа',
+ g_layout:'Планировка (геометрия, не данные)',layNote:'Схема 3D-макета: сколько ячеек есть на схеме.',lay_rack:'Ячеек стеллажей',lay_fmt:'Формат места',lay_docks:'Рампы приёмки (анимация)',
+ rep_title:'Отчёт по складу',rep_print:'Печать / PDF',rep_csv:'Экспорт CSV (формат Lager + количество)',rep_gen:'Сформирован',rep_sources:'Источники',rep_list:'Запас по местам',rep_noloc:'Детали без ячейки стеллажа',
  hint:'Нажмите на здание с оранжевой крышей, чтобы открыть склад (Logistik-Hub).',hint2:'Тяните — вращение, колесо / щипок — масштаб.',
  b_hub:'Logistik-Hub',b_hubS:'склад · открыть',b_b2:'Административный корпус А',b_b3:'Корпус Б',b_viz:'только визуально',
  viz_h:'Только визуальное обозначение',vizTxt:'Это здание показано для ориентира на территории. Функций в приложении у него нет.',close:'Закрыть',
  back:'◂ Территория',view:'Вид',views:['Склад','Стеллажи','Рампы приёмки','Производство (зона)','Сверху'],walls:'Стены',anim:'Анимация',
  fl_rack:'СТЕЛЛАЖИ · ДЕТАЛИ',fl_in:'ПРИЁМКА',fl_out:'ОТГРУЗКА',fl_prod:'ПРОИЗВОДСТВО',
- leg_S:'Маленькие (S)',leg_M:'Средние (M)',leg_L:'Большие (L)',leg_U:'Без класса',leg_free:'Свободная ячейка',leg_truck:'Подвоз (анимация)',leg_log:'Логист (вынос)',
- keys:'Клавиши: V — вид · E — ввод · F — весь экран · P — панель · Esc — к территории',
+ leg_free:'Свободная ячейка',leg_truck:'Подвоз (анимация)',leg_log:'Логист (вынос)',
+ keys:'Клавиши: V — вид · E — ввод · A — анимация · F — весь экран · P — панель · Esc — к территории',
  slot:'Ячейка',slot_empty:'Ячейка свободна',slot_add:'+ Деталь в эту ячейку',slot_more:'и ещё %n',
  q_in:'Подвоз: %n паллет.',q_out:'Вынос в «Производство»: %n',q_campus:'Анимация склада: откройте здание с оранжевой крышей',q_fast:'ускорено',
  anim_on:'Анимация изменений: вкл.',anim_off:'Анимация изменений: выкл.',
- qual:'Качество графики',q_auto:'Авто',q_high:'Высокое',q_low:'Экономное',q_autoNow:'сейчас: %s',
+ qual:'Качество графики',q_auto:'Авто',q_high:'Высокое',q_low:'Экономное',
  tip_back:'Вернуться к обзору территории',tip_view:'Следующий вид камеры (V)',tip_walls:'Показать / скрыть стены',tip_anim:'Анимация машин, паллет и погрузчиков при изменении запаса (только изображение — на данные не влияет)',
  tip_azSync:'Прочитать реестр деталей Arbeitzeit из localStorage этого origin (только чтение)',tip_azCsv:'Файл, выгруженный в Arbeitzeit: Склад → Экспорт CSV',tip_arbUrl:'Адрес данных (JSON или CSV). Выполняется только GET — в источнике ничего не меняется.',tip_arbGet:'Прочитать данные (только чтение)',tip_file:'CSV/JSON-файлы с деталями',
  ux_add:'Деталь',ux_addData2:'+ Ввести деталь',ux_addTip:'Ручной ввод детали (клавиша E)',ux_menu:'Меню',ux_close:'Закрыть',ux_loadFile:'Файл / Arbeitzeit',
- ux_emptyFact:'Склад пуст. Введите деталь вручную, загрузите файл CSV/JSON или синхронизируйте с Arbeitzeit.',ux_now:'Сейчас',ux_set:'Задать',ux_setThr:'Задать порог',
+ ux_emptyFact:'Склад пуст. Введите деталь вручную, загрузите файл CSV/JSON или синхронизируйте с Arbeitzeit.',ux_setThr:'Задать порог',
  ux_kpi:'Показатели',ux_hideHints:'Скрыть подсказки',ux_showKpi:'Строка показателей (KPI)',ux_fs:'Сцена на весь экран',ux_fsT:'Сцена на весь экран (F)',ux_panel:'Боковая панель: скрыть / показать (P)',
  ux_wide:'Широкая панель / обычная',ux_restore:'Вернуть закрытые подсказки',ux_lang:'Язык',ux_panelShow:'◂ Панель',ux_startH:'С чего начать',
- ux_startTxt:'Данных пока нет — встроенных значений нет. Введите детали (номер, место, количество, класс S/M/L) или загрузите CSV склада Arbeitzeit / свой CSV/JSON.',
- ux_manualH:'Ручной ввод',ux_split:'Ширина панели: перетащите или ←/→; двойной щелчок — скрыть',ux_keysNote:'Клавиши: E — ввод · F — весь экран · P — панель · V — вид · Esc — назад',ux_toParams:'Пороги →',ux_install:'⤓ Установить приложение',
+ ux_startTxt:'Данных пока нет — встроенных значений нет. Введите детали (номер, место, количество) или загрузите CSV склада Arbeitzeit / свой CSV/JSON.',
+ ux_split:'Ширина панели: перетащите или ←/→; двойной щелчок — скрыть',ux_keysNote:'Клавиши: E — ввод · A — анимация · F — весь экран · P — панель · V — вид · Esc — назад',ux_install:'⤓ Установить приложение',
  helpH:'Справка: форматы данных'},
 de:{
  sub_hub:'Lager · Bestand in Teilen',sub_campus:'Werksgelände',
  ban_tag:'Lager',ban_txt:'Bestand wird in Teilen (Stk) geführt. Er ändert sich nur durch Eingabe in der App und Import (Arbeitzeit nur lesen). LKW, Paletten und Stapler visualisieren nur diese Änderungen.',ban_last:'Letzte Änderung',
  tab_ov:'Übersicht',tab_stock:'Lager',tab_entry:'Eingabe',tab_data:'Daten',tab_params:'Parameter',tab_report:'Bericht',
- h_pos:'Positionen',h_qty:'Stück im Lager',h_slots:'Plätze belegt',h_cls:'S / M / L',h_ucls:'Ohne Klasse',h_noloc:'Ohne Platz',
- kpiH:'Lagerkennzahlen',alertsH:'Alarme',noAlerts:'Keine Verletzung der gesetzten Schwellen.',clsH:'Nach Größenklasse',recentH:'Letzte Änderungen',
+ h_pos:'Positionen',h_qty:'Stück im Lager',h_slots:'Plätze belegt',h_noloc:'Ohne Platz',
+ kpiH:'Lagerkennzahlen',alertsH:'Alarme',noAlerts:'Keine Verletzung der gesetzten Schwellen.',recentH:'Letzte Änderungen',
  k_pos:'Positionen (Teilenummern)',k_qty:'Stück im Lager (Summe gesetzter)',k_noqty:'Positionen ohne Menge',k_zero:'Positionen mit Menge 0',
- k_occ:'Platzbelegung',k_slots:'Belegte Plätze',k_free:'Freie Plätze',k_noloc:'Ohne Regalplatz',k_ucls:'Ohne Größenklasse',k_multi:'Plätze mit mehreren Teilen',
+ k_occ:'Platzbelegung',k_slots:'Belegte Plätze',k_free:'Freie Plätze',k_noloc:'Ohne Regalplatz',k_multi:'Plätze mit mehreren Teilen',
  u_pcs:'Stk',u_pos:'Pos.',thr:'Schwelle',notSet:'nicht gesetzt',notSetS:'nicht gesetzt',
- cls_S:'Klein',cls_M:'Mittel',cls_L:'Groß',cls_U:'Ohne Klasse',clsShort_U:'—',
- per_pos:'Pos.',
+ 
+ 
  st_h:'Datenspeicherung',
- stockH:'Lagerbestand',stockNote:'Jede Zeile: Teilenummer, Lagerplatz, Menge in Stück und Größenklasse. Zeile antippen — die Kamera zeigt den Platz.',
- s_ph:'Suche: Nummer, Bezeichnung, Platz…',s_all:'Alle',s_noloc:'ohne Platz',s_cnt:'Angezeigt',
- c_ic:'',c_num:'Teilenummer',c_name:'Bezeichnung',c_loc:'Lagerort',c_qty:'Menge',c_cls:'Klasse',c_src:'Quelle',
+ 
+ s_ph:'Suche: Nummer, Bezeichnung, Platz…',s_noloc:'ohne Platz',
+ c_num:'Teilenummer',c_name:'Bezeichnung',c_loc:'Lagerort',c_qty:'Menge',c_src:'Quelle',
  empty_stock:'Lager leer — Teil manuell eingeben oder Datei / Arbeitzeit-Daten laden.',nf:'Nichts gefunden',
  entryH:'Teil: Eingabe und Änderung',entryNote:'Änderungen werden sofort und nur auf diesem Gerät gespeichert. Existiert die Nummer schon, wird dieses Teil zur Änderung geöffnet.',
- ef_num:'Teilenummer',ef_name:'Bezeichnung',ef_loc:'Lagerort (R1-05-2)',ef_qty:'Menge, Stk',ef_size:'Größenklasse',
+ ef_num:'Teilenummer',ef_name:'Bezeichnung',ef_loc:'Lagerort (R1-05-2)',ef_qty:'Menge, Stk',
  loc_hint:'Reihe 1–4, Feld 1–20, Ebene 1–3. Andere Orte sind erlaubt, werden aber nicht in 3D gezeigt.',loc_off:'Ort außerhalb der Regale — nicht in 3D.',loc_ok:'Regalplatz',
- e_add:'Teil hinzufügen',e_update:'Änderungen speichern',e_cancel:'Abbrechen',e_del:'Teil löschen',e_added:'Hinzugefügt',e_updated:'Geändert',e_deleted:'Gelöscht',
- e_needNum:'Teilenummer angeben',e_dup:'Ein Teil mit dieser Nummer existiert bereits',e_exists:'Teil existiert — zur Änderung geöffnet',e_recent:'Letzte manuelle Änderungen',e_none:'Noch keine manuellen Änderungen',
+ e_add:'Teil hinzufügen',e_update:'Änderungen speichern',e_cancel:'Abbrechen',e_added:'Hinzugefügt',e_updated:'Geändert',e_deleted:'Gelöscht',
+ e_needNum:'Teilenummer angeben',e_dup:'Ein Teil mit dieser Nummer existiert bereits',e_exists:'Teil existiert — zur Änderung geöffnet',e_none:'Noch keine manuellen Änderungen',
  del_confirm:'Teil „%s“ aus dem Lager löschen?',edit:'Ändern',del:'Löschen',badVal:'Ungültiger Wert',
  dataH:'Daten',dataNote:'Bestandsquellen: manuelle Eingabe, CSV/JSON-Dateien und Arbeitzeit (nur lesen — Datenfluss nur Arbeitzeit → hierher). Alles lokal auf diesem Gerät.',
  az_h:'Arbeitzeit — nur lesen',az_sync:'Mit Arbeitzeit synchronisieren',az_csv:'Arbeitzeit-Lager-CSV importieren…',az_urlH:'Leseadresse (GET, optional)',
@@ -541,38 +527,38 @@ de:{
  az_none:'keine Teile gefunden',az_skip:'übersprungene Zeilen',az_detected:'Arbeitzeit-Lager-CSV erkannt',
  fa_get:'Laden (GET)',fa_auto:'Auto-Aktualisierung (nur hinzufügen/aktualisieren)',fa_file:'Import CSV / JSON',fa_pick:'Dateien wählen…',fa_loading:'Lädt…',fa_err:'Fehler',
  fa_cors:'Die Seite erlaubt kein Lesen aus dem Browser (CORS) oder ist nicht erreichbar.',fa_badurl:'Bitte http(s)://-Adresse angeben',
- srcH:'Quellen im Bestand',src_az:'Arbeitzeit',src_file:'Datei',src_in:'Eingabe',fa_total:'Positionen gesamt',fa_last:'Letzte Änderung',fa_clear:'Positionen dieser Quelle löschen',fa_all:'Alle',
+ src_az:'Arbeitzeit',src_file:'Datei',src_in:'Eingabe',fa_total:'Positionen gesamt',fa_last:'Letzte Änderung',fa_clear:'Positionen dieser Quelle löschen',fa_all:'Alle',
  clr_src_confirm:'Alle Positionen der Quelle „%s“ (%n) aus dem Lager löschen?',
  bk_h:'Sicherung: Konfiguration + Daten',bk_exp:'Alles exportieren (JSON)',bk_imp:'Alles importieren (JSON)',clr_all:'Alles löschen',bk_bad:'keine Logistik-Hub-Sicherung',bk_ok:'Wiederhergestellt',bk_err:'Importfehler',
  clr_confirm:'ALLE Daten und Einstellungen von Logistik-Hub in diesem Browser löschen?\nArbeitzeit-Daten bleiben unberührt.',clr_done:'Alles gelöscht.',
  bk_note:'Löscht nur Logistik-Hub-Schlüssel (lhub.r4.*) in diesem Browser. Arbeitzeit bleibt unberührt.',
  mig_note:'Daten der Version 4 übernommen %t: %p Teile (davon aus Bestandszeilen %s; Paletten werden nicht in Stück umgerechnet — Menge „nicht gesetzt“). Entfernte Produktions-/LKW-/Auftragsdatensätze: %d. Die Original-v4-Kopie bleibt lokal gespeichert und ist im JSON-Export enthalten.',
  imp_h:'Import: Wie soll die Datei angewendet werden?',imp_src:'Quelle',imp_rows:'Zeilen mit Teilenummer',imp_new:'Neue Teile',imp_upd:'Werden geändert',imp_same:'Unverändert',imp_up:'Menge steigt',imp_down:'Menge sinkt',imp_miss:'Im Lager, aber nicht in der Datei',
- imp_add:'Nur hinzufügen / aktualisieren — nichts löschen',imp_full:'Vollständige Inventur — fehlende Teile löschen (%n)',imp_apply:'Anwenden',imp_cancel:'Abbrechen',imp_done:'Import angewendet',imp_cancelled:'Import abgebrochen',imp_removed:'gelöscht',imp_skip:'Zeilen ohne Nummer übersprungen',
- imp_noQty:'Keine Mengen in der Datei — bestehende Mengen bleiben.',imp_noSize:'Keine Größenklasse in der Datei — bestehende Klassen bleiben.',
+ imp_add:'Nur hinzufügen / aktualisieren — nichts löschen',imp_full:'Vollständige Inventur — fehlende Teile löschen (%n)',imp_apply:'Anwenden',imp_done:'Import angewendet',imp_cancelled:'Import abgebrochen',imp_removed:'gelöscht',imp_skip:'Zeilen ohne Nummer übersprungen',
+ imp_noQty:'Keine Mengen in der Datei — bestehende Mengen bleiben.',
  paramsH:'Parameter',pr_save:'Leeres Feld = „nicht gesetzt“. Werte geben Sie ein; Speicherung auf diesem Gerät.',pr_exp:'JSON-Export',pr_imp:'JSON-Import',pr_impOk:'Parameter geladen',pr_impErr:'Fehler in Parameterdatei',
  g_thr:'Alarmschwellen',g_misc:'Sonstiges',p_th_rackHi:'Platzbelegung: obere Schwelle',p_th_rackLo:'Platzbelegung: untere Schwelle',p_arbAutoS:'Auto-Aktualisierung (GET)',un_pct:'%',un_s:'s',
- g_layout:'Layout (Geometrie, keine Daten)',layNote:'Maße des 3D-Layouts: so viele Plätze hat das Schema.',lay_rack:'Regalplätze',lay_fmt:'Format Lagerort',lay_docks:'Rampen Wareneingang (Animation)',
- rep_title:'Lagerbericht',rep_print:'Drucken / PDF',rep_csv:'CSV-Export (Lager-Format + Menge + Klasse)',rep_gen:'Erstellt',rep_sources:'Quellen',rep_kpi:'Kennzahl',rep_val:'Wert',rep_list:'Bestand nach Lagerort',rep_noloc:'Teile ohne Regalplatz',
+ g_layout:'Layout (Geometrie, keine Daten)',layNote:'Aufbau des 3D-Layouts: so viele Plätze hat das Schema.',lay_rack:'Regalplätze',lay_fmt:'Format Lagerort',lay_docks:'Rampen Wareneingang (Animation)',
+ rep_title:'Lagerbericht',rep_print:'Drucken / PDF',rep_csv:'CSV-Export (Lager-Format + Menge)',rep_gen:'Erstellt',rep_sources:'Quellen',rep_list:'Bestand nach Lagerort',rep_noloc:'Teile ohne Regalplatz',
  hint:'Klicken Sie auf das Gebäude mit dem orangen Dach, um das Lager (Logistik-Hub) zu öffnen.',hint2:'Ziehen — drehen, Rad / Pinch — zoomen.',
  b_hub:'Logistik-Hub',b_hubS:'Lager · öffnen',b_b2:'Verwaltungsgebäude A',b_b3:'Gebäude B',b_viz:'nur visuell',
  viz_h:'Nur visuelle Darstellung',vizTxt:'Dieses Gebäude dient nur der Orientierung auf dem Gelände. In der App hat es keine Funktion.',close:'Schließen',
  back:'◂ Gelände',view:'Ansicht',views:['Lager','Regale','Rampen WE','Produktion (Zone)','Draufsicht'],walls:'Wände',anim:'Animation',
  fl_rack:'REGALE · TEILE',fl_in:'WARENEINGANG',fl_out:'WARENAUSGANG',fl_prod:'PRODUKTION',
- leg_S:'Klein (S)',leg_M:'Mittel (M)',leg_L:'Groß (L)',leg_U:'Ohne Klasse',leg_free:'Freier Platz',leg_truck:'Anlieferung (Animation)',leg_log:'Logistiker (Auslagerung)',
- keys:'Tasten: V Ansicht · E Eingabe · F Vollbild · P Seitenleiste · Esc Gelände',
+ leg_free:'Freier Platz',leg_truck:'Anlieferung (Animation)',leg_log:'Logistiker (Auslagerung)',
+ keys:'Tasten: V Ansicht · E Eingabe · A Animation · F Vollbild · P Seitenleiste · Esc Gelände',
  slot:'Platz',slot_empty:'Platz frei',slot_add:'+ Teil auf diesen Platz',slot_more:'und %n weitere',
  q_in:'Anlieferung: %n Pal.',q_out:'Auslagerung zur „Produktion“: %n',q_campus:'Lageranimation: Gebäude mit orangem Dach öffnen',q_fast:'beschleunigt',
  anim_on:'Animation der Änderungen: ein',anim_off:'Animation der Änderungen: aus',
- qual:'Grafikqualität',q_auto:'Auto',q_high:'Hoch',q_low:'Sparsam',q_autoNow:'aktuell: %s',
+ qual:'Grafikqualität',q_auto:'Auto',q_high:'Hoch',q_low:'Sparsam',
  tip_back:'Zurück zur Geländeübersicht',tip_view:'Nächste Kameraansicht (V)',tip_walls:'Wände ein-/ausblenden',tip_anim:'Animation von LKW, Paletten und Staplern bei Bestandsänderungen (nur Darstellung — beeinflusst keine Daten)',
  tip_azSync:'Arbeitzeit-Teileverzeichnis aus localStorage dieses Origins lesen (nur lesen)',tip_azCsv:'In Arbeitzeit exportierte Datei: Lager → CSV exportieren',tip_arbUrl:'Datenadresse (JSON oder CSV). Nur GET — an der Quelle wird nichts geändert.',tip_arbGet:'Daten lesen (nur lesen)',tip_file:'CSV/JSON-Dateien mit Teilen',
  ux_add:'Teil',ux_addData2:'+ Teil eingeben',ux_addTip:'Manuelle Teileeingabe (Taste E)',ux_menu:'Menü',ux_close:'Schließen',ux_loadFile:'Datei / Arbeitzeit',
- ux_emptyFact:'Lager leer. Teil manuell eingeben, CSV/JSON-Datei laden oder mit Arbeitzeit synchronisieren.',ux_now:'Jetzt',ux_set:'Festlegen',ux_setThr:'Schwelle festlegen',
+ ux_emptyFact:'Lager leer. Teil manuell eingeben, CSV/JSON-Datei laden oder mit Arbeitzeit synchronisieren.',ux_setThr:'Schwelle festlegen',
  ux_kpi:'Kennzahlen',ux_hideHints:'Hinweise ausblenden',ux_showKpi:'Kennzahlenleiste (KPI)',ux_fs:'Szene im Vollbild',ux_fsT:'Szene im Vollbild (F)',ux_panel:'Seitenleiste aus / ein (P)',
  ux_wide:'Breite Seitenleiste / normal',ux_restore:'Geschlossene Hinweise wiederherstellen',ux_lang:'Sprache',ux_panelShow:'◂ Panel',ux_startH:'Erste Schritte',
- ux_startTxt:'Noch keine Daten — keine eingebauten Werte. Teile eingeben (Nummer, Platz, Menge, Klasse S/M/L) oder Arbeitzeit-Lager-CSV bzw. eigene CSV/JSON laden.',
- ux_manualH:'Manuelle Eingabe',ux_split:'Breite: ziehen oder ←/→; Doppelklick blendet aus',ux_keysNote:'Tasten: E Eingabe · F Vollbild · P Seitenleiste · V Ansicht · Esc zurück',ux_toParams:'Schwellen →',ux_install:'⤓ App installieren',
+ ux_startTxt:'Noch keine Daten — keine eingebauten Werte. Teile eingeben (Nummer, Platz, Menge) oder Arbeitzeit-Lager-CSV bzw. eigene CSV/JSON laden.',
+ ux_split:'Breite: ziehen oder ←/→; Doppelklick blendet aus',ux_keysNote:'Tasten: E Eingabe · A Animation · F Vollbild · P Seitenleiste · V Ansicht · Esc zurück',ux_install:'⤓ App installieren',
  helpH:'Hilfe: Datenformate'}};
 Object.assign(I18N.ru,{st_line:'Данные хранятся только на этом устройстве · защищены от автоочистки: %s',st_yes:'да',st_no:'нет',st_unk:'неизвестно',
  st_use:'Занято: %u из доступных %q (оценка браузера)',st_mirror:'Вторая копия на устройстве (IndexedDB) обновлена: %t',st_noIdb:'Вторая копия недоступна (IndexedDB отключён в этом браузере)',
@@ -588,6 +574,8 @@ Object.assign(I18N.de,{st_line:'Daten werden nur auf diesem Gerät gespeichert �
  st_quotaAll:'Speichern fehlgeschlagen: Gerätespeicher voll. Sofort JSON-Sicherung erstellen (Reiter „Daten“) und unnötige Positionen löschen.'});
 Object.assign(I18N.ru,{e_list:'Последние введённые вручную',fa_rec:'Источники данных',tip_clear:'Удалить со склада все детали выбранного источника'});
 Object.assign(I18N.de,{e_list:'Zuletzt manuell eingegeben',fa_rec:'Datenquellen',tip_clear:'Alle Teile der gewählten Quelle aus dem Bestand löschen'});
+Object.assign(I18N.ru,{h_free:'Свободно ячеек',leg_one:'Деталь в ячейке',leg_multi:'Несколько деталей в ячейке',s_noqty:'без количества'});
+Object.assign(I18N.de,{h_free:'Freie Plätze',leg_one:'Teil im Platz',leg_multi:'Mehrere Teile im Platz',s_noqty:'ohne Menge'});
 let lang='ru';
 try{const q=new URLSearchParams(location.search).get('lang');if(q==='de'||q==='ru')lang=q;else{const s=localStorage.getItem('lhub.lang');if(s==='de'||s==='ru')lang=s}}catch(e){}
 const T=k=>{const v=I18N[lang][k];return v===undefined?k:v};
@@ -600,7 +588,6 @@ const LS=(()=>{try{const s=window.localStorage;s.getItem('x');return s}catch(e){
 const has=v=>v!==null&&v!==undefined&&v!==''&&isFinite(v);
 const DKEY='lhub.r4.data',PKEY='lhub.r4.params',MKEY='lhub.r4.migrated',V4KEY='lhub.r4.v4backup';
 const ROWS_N=4,BAYS_N=20,LV_N=3,SLOTS_N=ROWS_N*BAYS_N*LV_N;          // fixed rack layout: 240 slots
-const SIZES=['S','M','L'];
 let PARTS=[],uidNo=0,lastChange=null,dataRev=0;
 const azNorm=s=>String(s==null?'':s).trim().toLowerCase();
 /* location R1-05-2 = row 1–4, section 1–20, level 1–3 → slot index 0…239 (or -1) */
@@ -608,21 +595,17 @@ function slotOf(loc){const m=String(loc||'').trim().match(/^R?\s*0*(\d{1,2})\s*[
   const r=+m[1],b=+m[2],l=+m[3];if(r<1||r>ROWS_N||b<1||b>BAYS_N||l<1||l>LV_N)return -1;return (r-1)*BAYS_N*LV_N+(b-1)*LV_N+(l-1)}
 function slotName(i){const r=Math.floor(i/(BAYS_N*LV_N))+1,b=Math.floor(i/LV_N)%BAYS_N+1,l=i%LV_N+1;return 'R'+r+'-'+String(b).padStart(2,'0')+'-'+l}
 function normLoc(loc){const s=String(loc==null?'':loc).trim();const i=slotOf(s);return i>=0?slotName(i):s}
-/* size class: S/M/L only from the user/import; anything else → null (unclassified, never invented) */
-function parseSize(v){if(v==null)return null;const s=String(v).trim().toLowerCase().replace(/\.$/,'');if(!s)return null;
-  if(/^(s|small|klein|kl|мал[а-яё]*)$/.test(s))return'S';
-  if(/^(m|medium|mid|mittel|mittelgroß|сред[а-яё]*)$/.test(s))return'M';
-  if(/^(l|large|big|groß|gross|бол[а-яё]*)$/.test(s))return'L';return null}
 function parseQty(v){if(v===undefined||v===null)return undefined;const s=String(v).trim().replace(/[\s\u00a0']/g,'');if(s==='')return undefined;
   const n=+s.replace(',','.');if(!isFinite(n)||n<0)return undefined;return Math.round(n)}
 /* ---- persistence ---- */
-function saveData(){dataRev++;LHStore.set(DKEY,JSON.stringify({v:5,uidNo,recs:PARTS.map(p=>({type:'part',data:{num:p.num,loc:p.loc,name:p.name,qty:p.qty,size:p.size,...(p.extra||{})},src:p.src,label:p.label,at:+p.at,uid:p.uid}))}))}
+function saveData(){dataRev++;LHStore.set(DKEY,JSON.stringify({v:5,uidNo,recs:PARTS.map(p=>({type:'part',data:{num:p.num,loc:p.loc,name:p.name,qty:p.qty,...(p.extra||{})},src:p.src,label:p.label,at:+p.at,uid:p.uid}))}))}
 function mkPart(o){return{uid:o.uid||++uidNo,num:String(o.num).trim(),name:String(o.name||'').trim(),loc:normLoc(o.loc),qty:has(o.qty)?Math.max(0,Math.round(+o.qty)):null,
-  size:SIZES.includes(o.size)?o.size:null,src:o.src||'input',label:o.label||'',at:o.at instanceof Date?o.at:new Date(+o.at||Date.now()),extra:o.extra||null}}
+  src:o.src||'input',label:o.label||'',at:o.at instanceof Date?o.at:new Date(+o.at||Date.now()),extra:o.extra||null}}
+let sizeDropped=0;   // v5.0 stored a size class (S/M/L); v5.1 drops it silently
 function loadV5(o){PARTS=[];uidNo=+o.uidNo||0;const seen=new Map();
   for(const r of o.recs||[]){if(!r||r.type!=='part'||!r.data)continue;const d=r.data;if(!String(d.num||'').trim())continue;
-    const extra={};for(const k of Object.keys(d))if(!['num','loc','name','qty','size'].includes(k))extra[k]=d[k];
-    const p=mkPart({uid:+r.uid||0,num:d.num,name:d.name,loc:d.loc,qty:d.qty,size:parseSize(d.size),src:r.src,label:r.label,at:r.at,extra:Object.keys(extra).length?extra:null});
+    const extra={};for(const k of Object.keys(d))if(!['num','loc','name','qty','size'].includes(k))extra[k]=d[k];if('size' in d)sizeDropped++;
+    const p=mkPart({uid:+r.uid||0,num:d.num,name:d.name,loc:d.loc,qty:d.qty,src:r.src,label:r.label,at:r.at,extra:Object.keys(extra).length?extra:null});
     if(!r.uid)p.uid=++uidNo;uidNo=Math.max(uidNo,p.uid);const k=azNorm(p.num);if(seen.has(k))PARTS.splice(PARTS.indexOf(seen.get(k)),1);seen.set(k,p);PARTS.push(p)}
   lastChange=PARTS.length?new Date(Math.max(...PARTS.map(p=>+p.at))):null}
 /* ---- v4 → v5 migration: keep parts + locations (+ quantity if a part record had one); pallet quantities are not converted;
@@ -630,8 +613,7 @@ function loadV5(o){PARTS=[];uidNo=+o.uidNo||0;const seen=new Map();
 const F={num:['num','part','part_no','part_number','partnumber','part_#','teilenummer','teile_nr','teilenr','teil','artikel','artikelnummer','artikelnr','sku','article','material','pn','номер_детали','номер','деталь','артикул'],
   loc:['loc','location','lagerort','lagerplatz','platz','bin','место','ячейка','место_хранения'],
   name:['name','bezeichnung','beschreibung','description','title','название','наименование','описание'],
-  qty:['qty','quantity','menge','anzahl','stk','stück','stueck','pcs','pieces','count','количество','кол_во','кол.','колво','шт','штук'],
-  size:['size','size_class','sizeclass','class','klasse','größe','groesse','grösse','größenklasse','groessenklasse','размер','класс','класс_размера']};
+  qty:['qty','quantity','menge','anzahl','stk','stück','stueck','pcs','pieces','count','количество','кол_во','кол.','колво','шт','штук']};
 function getF(d,names){const lk={};for(const k of Object.keys(d))lk[k.toLowerCase().trim().replace(/[\s\-]+/g,'_')]=k;
   for(const n of names){const k=lk[n];if(k!==undefined){const v=d[k];if(v!==''&&v!==null&&v!==undefined)return v}}return undefined}
 const hasF=(d,names)=>{const ks=Object.keys(d).map(k=>k.toLowerCase().trim().replace(/[\s\-]+/g,'_'));return names.some(n=>ks.includes(n))};
@@ -639,13 +621,13 @@ function migrateV4(o,rawData,rawParams){const recs=Array.isArray(o&&o.recs)?o.re
   let sb=-1;for(const r of recs)if(r&&r.type==='stock'&&r.src!=='input'&&(+r.batch||0)>sb)sb=+r.batch||0;   // v4 used only the latest imported stock snapshot + manual rows
   for(const r of recs){if(!r||!r.data){continue}const d=r.data;
     if(r.type==='part'){const num=String(d.num||'').trim();if(!num)continue;const q=parseQty(getF(d,F.qty));
-      by.set(azNorm(num),mkPart({num,name:d.name,loc:d.loc,qty:q===undefined?null:q,size:parseSize(getF(d,F.size)),src:r.src,label:r.label,at:r.at}))}
+      by.set(azNorm(num),mkPart({num,name:d.name,loc:d.loc,qty:q===undefined?null:q,src:r.src,label:r.label,at:r.at}))}
     else if(r.type==='stock'){if(r.src!=='input'&&(+r.batch||0)!==sb)continue;
       const z=String(d.zone||'').toLowerCase();if(/prod|произв|fertigung/.test(z)){dropped++;continue}
       const num=String(d.sku||d.article||d.artikel||d['артикул']||'').trim()||String(d.location||d.loc||'').trim();if(!num)continue;
       const k=azNorm(num),old=by.get(k),loc=d.location||d.loc||'';
       if(old){if(!old.loc&&loc)old.loc=normLoc(loc);continue}
-      const pal=parseQty(d.qty);fromStock++;by.set(k,mkPart({num,loc,qty:null,size:null,src:r.src,label:r.label,at:r.at,extra:pal===undefined?null:{palletsV4:pal}}))}
+      const pal=parseQty(d.qty);fromStock++;by.set(k,mkPart({num,loc,qty:null,src:r.src,label:r.label,at:r.at,extra:pal===undefined?null:{palletsV4:pal}}))}
     else dropped++}
   PARTS=[...by.values()];PARTS.forEach((p,i)=>p.uid=i+1);uidNo=PARTS.length;
   lastChange=PARTS.length?new Date(Math.max(...PARTS.map(p=>+p.at))):null;
@@ -653,7 +635,7 @@ function migrateV4(o,rawData,rawParams){const recs=Array.isArray(o&&o.recs)?o.re
   LHStore.set(MKEY,JSON.stringify({from:4,at:new Date().toISOString(),parts:PARTS.length,fromStock,dropped}));saveData()}
 function loadDataObj(o,rawData,rawParams){if(!o||typeof o!=='object'){PARTS=[];return}
   if(+o.v>=5)loadV5(o);else migrateV4(o,rawData,rawParams)}
-{const raw=LHStore.get(DKEY);let o=null;try{o=JSON.parse(raw||'null')}catch(e){}if(o)loadDataObj(o,raw,LHStore.get(PKEY));try{LHStore.remove('lhub.r4.mode')}catch(e){}}
+{const raw=LHStore.get(DKEY);let o=null;try{o=JSON.parse(raw||'null')}catch(e){}if(o){loadDataObj(o,raw,LHStore.get(PKEY));if(sizeDropped)saveData()}try{LHStore.remove('lhub.r4.mode')}catch(e){}}
 
 /* ---- params (only thresholds + GET interval remain; v4 production/sim params are dropped silently) ---- */
 const NUM_KEYS=['th_rackHi','th_rackLo','arbAutoS'];
@@ -670,7 +652,7 @@ function sortParts(L){return L.slice().sort((a,b)=>String(a.num).localeCompare(S
 function partsInSlot(i){return PARTS.filter(p=>slotOf(p.loc)===i)}
 /* ---- change → animation events (visual only; data is already saved) ---- */
 function animEvents(before,after){const ev={in:[],out:[]};
-  const b=before?{uid:before.uid,num:before.num,slot:slotOf(before.loc),size:before.size,qty:before.qty}:null,a=after?{uid:after.uid,num:after.num,slot:slotOf(after.loc),size:after.size,qty:after.qty}:null;
+  const b=before?{uid:before.uid,num:before.num,slot:slotOf(before.loc),qty:before.qty}:null,a=after?{uid:after.uid,num:after.num,slot:slotOf(after.loc),qty:after.qty}:null;
   if(!b&&a)ev.in.push(a);
   else if(b&&!a)ev.out.push(b);
   else if(a&&b){if(a.slot!==b.slot){if(b.slot>=0)ev.out.push(b);ev.in.push(a)}
@@ -684,8 +666,8 @@ function putPart(d,uid){const num=String(d.num||'').trim();if(!num)return{err:'e
   const other=findNum(num);let p=uid?findUid(uid):null;
   if(p&&other&&other!==p)return{err:'e_dup'};if(!p&&other)p=other;
   const before=p?Object.assign({},p):null;const at=new Date();
-  if(p){p.num=num;p.name=String(d.name||'').trim();p.loc=normLoc(d.loc);p.qty=has(d.qty)?d.qty:null;p.size=SIZES.includes(d.size)?d.size:null;p.src='input';p.label='ввод';p.at=at}
-  else{p=mkPart({num,name:d.name,loc:d.loc,qty:d.qty,size:d.size,src:'input',label:'ввод',at});PARTS.push(p)}
+  if(p){p.num=num;p.name=String(d.name||'').trim();p.loc=normLoc(d.loc);p.qty=has(d.qty)?d.qty:null;p.src='input';p.label='ввод';p.at=at}
+  else{p=mkPart({num,name:d.name,loc:d.loc,qty:d.qty,src:'input',label:'ввод',at});PARTS.push(p)}
   touch();emit(animEvents(before,p));return{part:p,created:!before}}
 function delPart(uid){const i=PARTS.findIndex(p=>p.uid===uid);if(i<0)return false;const p=PARTS[i];PARTS.splice(i,1);touch();emit(animEvents(p,null));return true}
 function delWhere(fn){const gone=PARTS.filter(fn);if(!gone.length)return 0;PARTS=PARTS.filter(p=>!fn(p));touch();const ev={in:[],out:[]};for(const p of gone)ev.out.push(...animEvents(p,null).out);emit(ev);return gone.length}
@@ -699,27 +681,27 @@ function parseCSV(txt){txt=txt.replace(/^\ufeff/,'');const sl=txt.match(/^sep=(.
     else if(ch==='"'&&f==='')q=true;else if(ch===sep){row.push(f);f=''}else if(ch==='\n'||ch==='\r'){if(ch==='\r'&&txt[i+1]==='\n')i++;row.push(f);f='';if(row.some(v=>v.trim()!==''))rows.push(row);row=[]}else f+=ch}
   row.push(f);if(row.some(v=>v.trim()!==''))rows.push(row);return rows}
 /* Arbeitzeit 'Lager' CSV (lagerCsvText): UTF-8 BOM, ';', CRLF, localized header [part number, location, name], positional columns.
-   v5 accepts optional extra columns (quantity / size class) recognised by header name, or positionally as 4th = quantity, 5th = size. */
+   optional extra column «quantity» recognised by header name, or positionally as the 4th column; any other column (e.g. an old size/Größe/Размер column) is ignored. */
 const AZ_HEADERS=[['Part number','Location','Name'],['Teilenummer','Lagerort','Bezeichnung'],['Номер детали','Место','Название'],['Référence','Emplacement','Désignation'],['Número de pieza','Ubicación','Nombre']];
 function azIsHeader(r){const n=azNorm(r[0]);return AZ_HEADERS.some(h=>azNorm(h[0])===n)||/^(part ?(no|number|#)|teile?-?nr\.?|teilenummer|artikel(nummer)?|номер( детали)?|référence|reference|número|numero|pn|num)$/i.test(String(r[0]||'').trim())}
 function azLooksLager(rows){return rows.length>0&&AZ_HEADERS.some(h=>azNorm(h[0])===azNorm(rows[0][0])&&azNorm(h[1])===azNorm(rows[0][1]))}
 function decodeBuf(buf){const b=new Uint8Array(buf);try{return new TextDecoder('utf-8',{fatal:true}).decode(b)}catch(e){try{return new TextDecoder(lang==='ru'?'windows-1251':'windows-1252').decode(b)}catch(e2){return new TextDecoder('utf-8').decode(b)}}}
 const colIdx=(hd,names)=>{const h=hd.map(x=>azNorm(x).replace(/[\s\-]+/g,'_'));for(const n of names){const i=h.indexOf(n);if(i>=0)return i}return -1};
 function parseLagerRows(rows){let hd=null;if(rows.length&&azIsHeader(rows[0])){hd=rows[0];rows=rows.slice(1)}
-  let qi=-1,si=-1;if(hd){qi=colIdx(hd,F.qty);si=colIdx(hd,F.size)}else{qi=3;si=4}
+  let qi=-1;if(hd){qi=colIdx(hd,F.qty)}else{qi=3}
   const out=[];let skip=0;
   for(const r of rows){const num=String(r[0]||'').trim();if(!num){skip++;continue}
     const o={num,loc:String(r[1]||'').trim(),name:String(r[2]||'').trim()};
-    if(qi>=0){const q=parseQty(r[qi]);if(q!==undefined)o.qty=q}if(si>=0){const s=parseSize(r[si]);if(s)o.size=s}out.push(o)}
-  return{parts:out,skip,hasQty:hd?qi>=0:out.some(o=>o.qty!==undefined),hasSize:hd?si>=0:out.some(o=>o.size)}}
-function rowsFromObjects(arr){const out=[];let skip=0,hasQty=false,hasSize=false;
+    if(qi>=0){const q=parseQty(r[qi]);if(q!==undefined)o.qty=q}out.push(o)}
+  return{parts:out,skip,hasQty:hd?qi>=0:out.some(o=>o.qty!==undefined)}}
+function rowsFromObjects(arr){const out=[];let skip=0,hasQty=false;
   for(const d of arr){if(!d||typeof d!=='object'||Array.isArray(d)){skip++;continue}const num=getF(d,F.num);if(num===undefined||String(num).trim()===''){skip++;continue}
     const o={num:String(num).trim(),loc:String(getF(d,F.loc)||'').trim(),name:String(getF(d,F.name)||'').trim()};
-    if(hasF(d,F.qty))hasQty=true;if(hasF(d,F.size))hasSize=true;const q=parseQty(getF(d,F.qty));if(q!==undefined)o.qty=q;const s=parseSize(getF(d,F.size));if(s)o.size=s;out.push(o)}
-  return{parts:out,skip,hasQty,hasSize}}
+    if(hasF(d,F.qty))hasQty=true;const q=parseQty(getF(d,F.qty));if(q!==undefined)o.qty=q;out.push(o)}
+  return{parts:out,skip,hasQty}}
 function csvObjects(rows){if(rows.length<1)return[];const hd=rows[0].map(h=>h.trim());return rows.slice(1).map(r=>{const o={};hd.forEach((h,i)=>{if(h)o[h]=(r[i]||'').trim()});return o})}
-/* any text (JSON or CSV) → {parts,skip,hasQty,hasSize,lager} */
-function parseAny(txt){const s=txt.replace(/^\ufeff/,'').trim();if(!s)return{parts:[],skip:0,hasQty:false,hasSize:false};
+/* any text (JSON or CSV) → {parts,skip,hasQty,lager} */
+function parseAny(txt){const s=txt.replace(/^\ufeff/,'').trim();if(!s)return{parts:[],skip:0,hasQty:false};
   if(/^[\[{]/.test(s)){const j=JSON.parse(s);let arr=null;
     if(Array.isArray(j))arr=j;else if(j&&typeof j==='object'){for(const k of['parts','teile','детали','lager','stock','bestand','items','data'])if(Array.isArray(j[k])){arr=j[k];break}
       if(!arr){arr=[];for(const v of Object.values(j))if(Array.isArray(v))arr.push(...v);if(!arr.length)arr=[j]}}
@@ -730,33 +712,62 @@ function parseAny(txt){const s=txt.replace(/^\ufeff/,'').trim();if(!s)return{par
   return r}
 /* ---- import diff (preview) and apply ---- */
 function importPlan(res){const by=new Map();for(const o of res.parts)by.set(azNorm(o.num),o);   // duplicate number: last row wins (as in Arbeitzeit)
-  const plan={rows:by.size,skip:res.skip||0,add:[],upd:[],same:0,up:0,down:0,miss:[],hasQty:!!res.hasQty,hasSize:!!res.hasSize,items:[...by.values()]};
+  const plan={rows:by.size,skip:res.skip||0,add:[],upd:[],same:0,up:0,down:0,miss:[],hasQty:!!res.hasQty,items:[...by.values()]};
   for(const o of plan.items){const p=findNum(o.num);if(!p){plan.add.push(o);continue}
-    const nl=normLoc(o.loc),q=o.qty!==undefined?o.qty:p.qty,s=o.size||p.size;
-    const ch=nl!==p.loc||o.name!==p.name||q!==p.qty||s!==p.size;if(ch)plan.upd.push(o);else plan.same++;
+    const nl=normLoc(o.loc),q=o.qty!==undefined?o.qty:p.qty;
+    const ch=nl!==p.loc||o.name!==p.name||q!==p.qty;if(ch)plan.upd.push(o);else plan.same++;
     if(has(q)&&has(p.qty)){if(q>p.qty)plan.up++;else if(q<p.qty)plan.down++}}
   const inFile=new Set(by.keys());plan.miss=PARTS.filter(p=>!inFile.has(azNorm(p.num)));return plan}
 function applyImport(plan,src,label,full){const at=new Date();const ev={in:[],out:[]};const add=(e)=>{ev.in.push(...e.in);ev.out.push(...e.out)};
   for(const o of plan.items){let p=findNum(o.num);const before=p?Object.assign({},p):null;
-    if(!p){p=mkPart({num:o.num,name:o.name,loc:o.loc,qty:o.qty===undefined?null:o.qty,size:o.size||null,src,label,at});PARTS.push(p)}
-    else{p.loc=normLoc(o.loc);p.name=o.name;if(o.qty!==undefined)p.qty=o.qty;if(o.size)p.size=o.size;
-      if(before.loc!==p.loc||before.name!==p.name||before.qty!==p.qty||before.size!==p.size){p.src=src;p.label=label;p.at=at}}
+    if(!p){p=mkPart({num:o.num,name:o.name,loc:o.loc,qty:o.qty===undefined?null:o.qty,src,label,at});PARTS.push(p)}
+    else{p.loc=normLoc(o.loc);p.name=o.name;if(o.qty!==undefined)p.qty=o.qty;
+      if(before.loc!==p.loc||before.name!==p.name||before.qty!==p.qty){p.src=src;p.label=label;p.at=at}}
     add(animEvents(before,p))}
   let removed=0;if(full){const gone=new Set(plan.miss.map(p=>p.uid));for(const p of PARTS.filter(p=>gone.has(p.uid)))add(animEvents(p,null));removed=gone.size;PARTS=PARTS.filter(p=>!gone.has(p.uid))}
   touch();emit(ev);return{added:plan.add.length,updated:plan.upd.length,removed}}
 
 /* ================= KPIs (only from user-entered / imported data) ================= */
-function compute(){const K={pos:PARTS.length,qty:0,qtyKnown:0,noqty:0,zero:0,noloc:0,ucls:0,cls:{S:{n:0,q:0},M:{n:0,q:0},L:{n:0,q:0},U:{n:0,q:0}}};
+function compute(){const K={pos:PARTS.length,qty:0,qtyKnown:0,noqty:0,zero:0,noloc:0};
   const slots=new Map();
-  for(const p of PARTS){const c=p.size||'U';K.cls[c].n++;if(has(p.qty)){K.qty+=p.qty;K.qtyKnown++;K.cls[c].q+=p.qty;if(p.qty===0)K.zero++}else K.noqty++;
-    if(!p.size)K.ucls++;const s=slotOf(p.loc);if(s<0)K.noloc++;else slots.set(s,(slots.get(s)||0)+1)}
+  for(const p of PARTS){if(has(p.qty)){K.qty+=p.qty;K.qtyKnown++;if(p.qty===0)K.zero++}else K.noqty++;
+    const s=slotOf(p.loc);if(s<0)K.noloc++;else slots.set(s,(slots.get(s)||0)+1)}
   K.slots=slots.size;K.free=SLOTS_N-K.slots;K.occ=K.pos?K.slots/SLOTS_N*100:null;K.multi=[...slots.values()].filter(n=>n>1).length;
   if(!K.pos){K.qty=null}else if(!K.qtyKnown)K.qty=null;
   return K}
-const fmtN=(v,d)=>v===null||v===undefined||!isFinite(v)?'—':(+v).toFixed(d||0);
+const fmtN=(v,d)=>v===null||v===undefined||!isFinite(v)?'—':(+v).toLocaleString(lang==='de'?'de-DE':'ru-RU',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});
+const fmtX=v=>(+v).toLocaleString(lang==='de'?'de-DE':'ru-RU',{maximumFractionDigits:6});
 const KPIS=[{k:'pos',u:'u_pos'},{k:'qty',u:'u_pcs'},{k:'occ',u:'%',d:1,bad:K=>K.occ!==null&&((has(P.th_rackHi)&&K.occ>=P.th_rackHi)||(has(P.th_rackLo)&&K.occ<=P.th_rackLo)),
-  th:()=>has(P.th_rackLo)||has(P.th_rackHi)?(has(P.th_rackLo)?P.th_rackLo:'…')+'–'+(has(P.th_rackHi)?P.th_rackHi:'…')+' %':T('notSet'),jump:'#pi-th_rackLo'},
-  {k:'slots',u:'/ '+SLOTS_N},{k:'free',u:''},{k:'noloc',u:'u_pos'},{k:'noqty',u:'u_pos'},{k:'zero',u:'u_pos'},{k:'ucls',u:'u_pos'},{k:'multi',u:''}];
+  th:()=>has(P.th_rackLo)||has(P.th_rackHi)?(has(P.th_rackLo)?fmtX(P.th_rackLo):'…')+'–'+(has(P.th_rackHi)?fmtX(P.th_rackHi):'…')+' %':T('notSet'),jump:'#pi-th_rackLo'},
+  {k:'slots',u:'/ '+SLOTS_N},{k:'free',u:''},{k:'noloc',u:'u_pos'},{k:'noqty',u:'u_pos'},{k:'zero',u:'u_pos'},{k:'multi',u:''}];
+
+/* ================= GENERIC PART MODEL (one detailed model for every part) =================
+   Flanged, machined hub: bevelled 6-hole flange, stepped turned body with chamfers and a groove,
+   hex bolts with washers, brass bushing. Built once; drawn with InstancedMesh. Returns 3 geometries by material. */
+function partModelGeos(){
+  const m4=(x,y,z,rx,ry,rz,s)=>new THREE.Matrix4().compose(new THREE.Vector3(x||0,y||0,z||0),new THREE.Quaternion().setFromEuler(new THREE.Euler(rx||0,ry||0,rz||0)),new THREE.Vector3(s||1,s||1,s||1));
+  const merge=list=>{let n=0;const pos=[],nor=[],uv=[];for(const [g0,mx] of list){const g=g0.index?g0.toNonIndexed():g0.clone();if(mx)g.applyMatrix4(mx);
+      pos.push(g.attributes.position.array);nor.push(g.attributes.normal.array);uv.push(g.attributes.uv?g.attributes.uv.array:new Float32Array(g.attributes.position.count*2));n+=g.attributes.position.count}
+    const cat=(arrs,k)=>{const o=new Float32Array(n*k);let off=0;for(const a of arrs){o.set(a,off);off+=a.length}return o};
+    const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(cat(pos,3),3));g.setAttribute('normal',new THREE.BufferAttribute(cat(nor,3),3));g.setAttribute('uv',new THREE.BufferAttribute(cat(uv,2),2));return g};
+  const SEG=64,FR=0.30,FH=0.055,HOLE_R=0.235;
+  /* flange plate with 6 bolt holes and a centre bore */
+  const sh=new THREE.Shape();sh.absarc(0,0,FR,0,Math.PI*2,false);
+  const bore=new THREE.Path();bore.absarc(0,0,0.078,0,Math.PI*2,true);sh.holes.push(bore);
+  for(let k=0;k<6;k++){const a=k*Math.PI/3+Math.PI/6,h=new THREE.Path();h.absarc(HOLE_R*Math.cos(a),HOLE_R*Math.sin(a),0.022,0,Math.PI*2,true);sh.holes.push(h)}
+  const flange=new THREE.ExtrudeGeometry(sh,{depth:FH,bevelEnabled:true,bevelThickness:0.008,bevelSize:0.008,bevelSegments:3,curveSegments:SEG});
+  flange.rotateX(-Math.PI/2);flange.translate(0,0.008,0);
+  /* turned body: closed cross-section revolved (outer steps + chamfers, inner bore) */
+  const P=[[0.078,0.06],[0.192,0.06],[0.198,0.066],[0.198,0.112],[0.186,0.126],[0.152,0.126],[0.152,0.315],[0.143,0.332],[0.118,0.332],[0.118,0.408],[0.108,0.42],[0.088,0.42],[0.078,0.41],[0.078,0.06]];
+  const body=new THREE.LatheGeometry(P.map(([r,y])=>new THREE.Vector2(r,y)),SEG);
+  const groove=new THREE.TorusGeometry(0.152,0.006,8,SEG);
+  /* bolts: hex head + washer at every hole */
+  const head=new THREE.CylinderGeometry(0.03,0.03,0.026,6),washer=new THREE.TorusGeometry(0.027,0.007,8,28),stud=new THREE.CylinderGeometry(0.012,0.012,0.02,16);
+  const steel=[[body,null],[groove,m4(0,0.22,0,Math.PI/2)],[groove,m4(0,0.26,0,Math.PI/2)]];
+  for(let k=0;k<6;k++){const a=k*Math.PI/3+Math.PI/6,x=HOLE_R*Math.cos(a),z=-HOLE_R*Math.sin(a);
+    steel.push([washer,m4(x,0.072,z,Math.PI/2)],[head,m4(x,0.09,z,0,a)],[stud,m4(x,0.111,z)])}
+  const brass=[[new THREE.TorusGeometry(0.083,0.01,12,SEG),m4(0,0.418,0,Math.PI/2)],[new THREE.CylinderGeometry(0.082,0.082,0.05,SEG,1,true),m4(0,0.395,0)]];
+  return{paint:merge([[flange,null]]),steel:merge(steel),brass:merge(brass)}}
 
 /* ================= RENDERER (tone-mapped, sRGB, adaptive quality) ================= */
 const stage=$('stage');
@@ -788,8 +799,7 @@ const M={floor:texMat(stdM(0x8a9097,{roughness:0.82}),'concrete.jpg',10,7),yard:
   trailer:stdM(0xe9ecef,{roughness:0.45,metalness:0.15}),inCab:stdM(0x3f78d9,{roughness:0.35,metalness:0.45}),glass:stdM(0x1c2a36,{roughness:0.08,metalness:0.9}),
   chrome:stdM(0xd5dbe0,{roughness:0.18,metalness:1}),light:new THREE.MeshStandardMaterial({color:0xffffff,emissive:0xfff3d6,emissiveIntensity:1.2,roughness:0.3}),
   red:stdM(0xd8453a,{roughness:0.4,emissive:lin(0x400000)}),wood:stdM(0xb48a58,{roughness:0.85}),card:stdM(0xc49a62,{roughness:0.9}),wrap:stdM(0xdfe6ec,{roughness:0.25,metalness:0.05,transparent:true,opacity:0.55}),
-  vest:stdM(0xff7a1a,{roughness:0.7}),logV:stdM(0xb5d334,{roughness:0.7}),pants:stdM(0x2c3440,{roughness:0.85}),skin:stdM(0xd9a77f,{roughness:0.7}),helmet:stdM(0xf4f4ef,{roughness:0.4}),stripe:stdM(0xe8eef2,{roughness:0.3,metalness:0.4}),
-  partSteel:texMat(stdM(0xb7c0c9,{roughness:0.28,metalness:0.92}),'metal.jpg',2,2),partPaint:stdM(0x4d5f73,{roughness:0.5,metalness:0.35}),partBrass:stdM(0xc9a24b,{roughness:0.3,metalness:0.9}),partU:stdM(0x8d96a0,{roughness:0.6,metalness:0.2})};
+  vest:stdM(0xff7a1a,{roughness:0.7}),logV:stdM(0xb5d334,{roughness:0.7}),pants:stdM(0x2c3440,{roughness:0.85}),skin:stdM(0xd9a77f,{roughness:0.7}),helmet:stdM(0xf4f4ef,{roughness:0.4}),stripe:stdM(0xe8eef2,{roughness:0.3,metalness:0.4})};
 /* geometry helpers: rounded boxes, merging (fewer draw calls) */
 function rrShape(w,h,r){const s=new THREE.Shape(),x=-w/2,y=-h/2;r=Math.max(0,Math.min(r,w/2,h/2));if(r<=1e-4){s.moveTo(x,y);s.lineTo(x+w,y);s.lineTo(x+w,y+h);s.lineTo(x,y+h);s.lineTo(x,y);return s}
   s.moveTo(x+r,y);s.lineTo(x+w-r,y);s.quadraticCurveTo(x+w,y,x+w,y+r);s.lineTo(x+w,y+h-r);s.quadraticCurveTo(x+w,y+h,x+w-r,y+h);s.lineTo(x+r,y+h);s.quadraticCurveTo(x,y+h,x,y+h-r);s.lineTo(x,y+r);s.quadraticCurveTo(x,y,x+r,y);return s}
@@ -878,43 +888,17 @@ const rack=[];
     for(let b=0;b<BAYS;b++)for(let l=0;l<3;l++)rack.push({kind:'rack',idx:rack.length,x:-23.75+b*2.5,y:LV[l],z:r.z,a:r.a,beamY:BEAMY[l],face:r.a>r.z?1:-1})}
   inst(postG,M.rack,posts);inst(braceG,M.rack,braces,S,false);inst(beamG,M.beam,beams);inst(deckG,M.deck,decks);inst(plateG,M.steel,plates,S,false);inst(guardG,M.yellow,guards)}
 /* slot label plates (per-slot colour: class of stored parts; grey = free) */
-const CLS_COL={S:0x3fbfae,M:0xf2b705,L:0xb08ae8,U:0x8d9bab,X:0xe8edf2,free:0x3a4450};
+const SLOT_COL={one:0x3fbfae,multi:0xf2b705,free:0x3a4450};
 const plateIM=new THREE.InstancedMesh(rbox(0.8,0.15,0.03,0.015,1),new THREE.MeshStandardMaterial({roughness:0.5,metalness:0.05,emissive:0xffffff,emissiveIntensity:0.12}),SLOTS_N);
-rack.forEach((s,i)=>{plateIM.setMatrixAt(i,mat4(s.x,s.beamY,s.z+s.face*0.6));plateIM.setColorAt(i,lin(CLS_COL.free))});S.add(plateIM);
+rack.forEach((s,i)=>{plateIM.setMatrixAt(i,mat4(s.x,s.beamY,s.z+s.face*0.6));plateIM.setColorAt(i,lin(SLOT_COL.free))});S.add(plateIM);
 
-/* ================= PART MODELS (S/M/L/unclassified) — high-poly templates, drawn with InstancedMesh ================= */
-function hexNutGeo(r,h,hole){const s=new THREE.Shape();for(let i=0;i<6;i++){const a=Math.PI/3*i;const x=r*Math.cos(a),y=r*Math.sin(a);i?s.lineTo(x,y):s.moveTo(x,y)}s.closePath();
-  const p=new THREE.Path();p.absarc(0,0,hole,0,Math.PI*2,true);s.holes.push(p);const g=new THREE.ExtrudeGeometry(s,{depth:h,bevelEnabled:true,bevelThickness:h*0.12,bevelSize:r*0.06,bevelSegments:2,curveSegments:20});g.translate(0,0,-h/2);return g}
-function gearGeo(ro,ri,n,hole,h){const s=new THREE.Shape();for(let i=0;i<n;i++){const a=2*Math.PI*i/n,w=Math.PI/n;
-    const P=[[a-w*0.55,ri],[a-w*0.3,ro],[a+w*0.3,ro],[a+w*0.55,ri]];P.forEach(([aa,r],j)=>{const x=r*Math.cos(aa),y=r*Math.sin(aa);(i===0&&j===0)?s.moveTo(x,y):s.lineTo(x,y)})}s.closePath();
-  const p=new THREE.Path();p.absarc(0,0,hole,0,Math.PI*2,true);s.holes.push(p);
-  for(let k=0;k<6;k++){const a=k*Math.PI/3+0.3,hp=new THREE.Path();hp.absarc((ri*0.62)*Math.cos(a),(ri*0.62)*Math.sin(a),ri*0.07,0,Math.PI*2,true);s.holes.push(hp)}
-  const g=new THREE.ExtrudeGeometry(s,{depth:h,bevelEnabled:true,bevelThickness:0.012,bevelSize:0.008,bevelSegments:2,curveSegments:12});g.translate(0,0,-h/2);return g}
-function shaftGeo(len){const pr=[[0,0],[0.035,0],[0.04,0.01],[0.04,0.18],[0.055,0.19],[0.055,0.5],[0.075,0.51],[0.075,0.62],[0.06,0.63],[0.06,0.98],[0.045,0.99],[0.045,1.2],[0.035,1.22],[0,1.22]].map(([r,y])=>new THREE.Vector2(r,y*len/1.22));
-  const g=new THREE.LatheGeometry(pr,32);g.rotateZ(-Math.PI/2);g.translate(-len/2,0,0);return g}
-const PT={};
-{ // S: bolts, nuts, washers (scaled up for visibility)
-  const shaft=new THREE.CylinderGeometry(0.035,0.035,0.32,20),head=new THREE.CylinderGeometry(0.062,0.062,0.05,6),washer=new THREE.TorusGeometry(0.048,0.016,10,28),nut=hexNutGeo(0.06,0.05,0.032);
-  const L=[];for(const [x,z,ry] of [[-0.12,-0.12,0.3],[0.05,0.02,-0.5],[0.16,-0.18,1.2]]){L.push([shaft,mat4(x,0.037,z,0,ry,Math.PI/2)]);L.push([head,mat4(x-0.18*Math.cos(ry),0.062,z+0.18*Math.sin(ry),0,ry,Math.PI/2)])}
-  for(const [x,z] of [[-0.18,0.14],[0.18,0.16]])L.push([nut,mat4(x,0.03,z,Math.PI/2)]);
-  for(const [x,z] of [[0.0,0.2],[-0.02,-0.25],[0.24,0.0]])L.push([washer,mat4(x,0.016,z,Math.PI/2)]);
-  PT.S={parts:[{g:mergeGeos(L),m:M.partSteel}],w:0.62,sc:1.5}}
-{ // M: flanged spur gear standing on its rim
-  const gear=gearGeo(0.34,0.3,28,0.075,0.12),hub=new THREE.CylinderGeometry(0.13,0.13,0.24,40,1,true),hubCap=new THREE.RingGeometry(0.075,0.13,40),key=new THREE.BoxGeometry(0.02,0.03,0.24);
-  const L=[[gear,mat4(0,0.345,0)],[hub,mat4(0,0.345,0,Math.PI/2)],[hubCap,mat4(0,0.345,0.12)],[hubCap,mat4(0,0.345,-0.12,0,Math.PI)]];
-  PT.M={parts:[{g:mergeGeos(L),m:M.partSteel},{g:mergeGeos([[key,mat4(0,0.345+0.085,0)]]),m:M.partBrass}],w:0.8,sc:1}}
-{ // L: gearbox housing + stepped shaft
-  const body=rbox(0.95,0.6,0.62,0.06,3),foot=rbox(1.08,0.06,0.78,0.02,2),cover=rbox(0.78,0.05,0.5,0.02,2),boss=new THREE.CylinderGeometry(0.2,0.2,0.1,40),rib=rbox(0.05,0.5,0.66,0.015,1);
-  const ring=new THREE.TorusGeometry(0.12,0.03,12,40),bore=new THREE.CylinderGeometry(0.1,0.1,0.11,32);
-  const H=[[foot,mat4(0,0.03,-0.05)],[body,mat4(0,0.36,-0.05)],[cover,mat4(0,0.685,-0.05)],[boss,mat4(-0.15,0.36,0.29,Math.PI/2)],[boss,mat4(-0.15,0.36,-0.39,Math.PI/2)],[rib,mat4(-0.42,0.33,-0.05)],[rib,mat4(0.4,0.33,-0.05)]];
-  const St=[[ring,mat4(-0.15,0.36,0.345)],[bore,mat4(-0.15,0.36,0.29,Math.PI/2)],[shaftGeo(1.25),mat4(0.05,0.08,0.43)]];
-  PT.L={parts:[{g:mergeGeos(H),m:M.partPaint},{g:mergeGeos(St),m:M.partSteel}],w:1.25,sc:1}}
-{ // unclassified: neutral turned billet
-  const pr=[[0,0],[0.17,0],[0.19,0.02],[0.19,0.46],[0.17,0.48],[0,0.48]].map(([r,y])=>new THREE.Vector2(r,y));const g=new THREE.LatheGeometry(pr,40);g.rotateZ(Math.PI/2);g.translate(0.24,0.19,0);
-  PT.U={parts:[{g:mergeGeos([[g,null]]),m:M.partU}],w:0.55,sc:1}}
-const partIM={};for(const k of['S','M','L','U'])partIM[k]=PT[k].parts.map(p=>{const im=new THREE.InstancedMesh(p.g,p.m,SLOTS_N*3+40);im.count=0;im.castShadow=true;im.receiveShadow=true;S.add(im);return im});
-/* small carried/pallet copies of a part (non-instanced, used only during animations) */
-function partMesh(cls,scale){const g=new THREE.Group();for(const p of PT[cls||'U'].parts){const m=new THREE.Mesh(p.g,p.m);m.castShadow=true;g.add(m)}g.scale.setScalar((scale||1)*PT[cls||'U'].sc);return g}
+/* ================= PART MODEL — one generic detailed model for every part (see partmodel.js), drawn with InstancedMesh ================= */
+M.partPaint=stdM(0x3d5878,{roughness:0.5,metalness:0.3});M.partSteel=stdM(0xb4bcc4,{roughness:0.32,metalness:0.6});M.partBrass=stdM(0xc9a24b,{roughness:0.3,metalness:0.7,side:THREE.DoubleSide});
+const PGEO=partModelGeos(),PSC=1.35;
+const PART_PARTS=[{g:PGEO.paint,m:M.partPaint},{g:PGEO.steel,m:M.partSteel},{g:PGEO.brass,m:M.partBrass}];
+const partIM=PART_PARTS.map(p=>{const im=new THREE.InstancedMesh(p.g,p.m,SLOTS_N*3+40);im.count=0;im.castShadow=true;im.receiveShadow=true;S.add(im);return im});
+/* carried copy of a part (non-instanced, used only during animations) */
+function partMesh(scale){const g=new THREE.Group();for(const p of PART_PARTS){const m=new THREE.Mesh(p.g,p.m);m.castShadow=true;g.add(m)}g.scale.setScalar((scale||1)*PSC);return g}
 
 /* ================= VISUAL STOCK STATE (data minus parts still «on the way», plus parts being carried out) ================= */
 const hiddenIn=new Set();      // uids whose inbound pallet has not reached the rack yet (visual only)
@@ -922,17 +906,14 @@ let ghosts=[];                  // removed parts still shown in their slot until
 let ghostNo=0,visDirty=true;
 const OFFS={1:[0],2:[-0.58,0.58],3:[-0.78,0,0.78]};
 function rebuildRack(){visDirty=false;const per=new Map();
-  for(const p of PARTS){if(hiddenIn.has(p.uid))continue;const s=slotOf(p.loc);if(s<0)continue;(per.get(s)||per.set(s,[]).get(s)).push(p.size||'U')}
-  for(const g of ghosts){if(g.picked)continue;(per.get(g.slot)||per.set(g.slot,[]).get(g.slot)).push(g.size||'U')}
-  const cnt={S:0,M:0,L:0,U:0};
-  for(let i=0;i<SLOTS_N;i++){const L=per.get(i);const s=rack[i];
-    if(!L||!L.length){plateIM.setColorAt(i,lin(CLS_COL.free));continue}
-    const uniq=[...new Set(L)];plateIM.setColorAt(i,lin(uniq.length>1?CLS_COL.X:CLS_COL[uniq[0]]));
-    const show=L.slice(0,3),n=show.length;
-    show.forEach((c,j)=>{const t=PT[c];let sc=t.sc*(n===1?1.25:n>1&&c==='L'?0.62:n>2&&c==='M'?0.8:1);
-      const m=mat4(s.x+OFFS[n][j],s.y,s.z,0,s.face<0?Math.PI:0,0,sc);
-      for(const im of partIM[c])im.setMatrixAt(cnt[c],m);cnt[c]++})}
-  for(const c in partIM)for(const im of partIM[c]){im.count=cnt[c];im.instanceMatrix.needsUpdate=true}
+  for(const p of PARTS){if(hiddenIn.has(p.uid))continue;const s=slotOf(p.loc);if(s<0)continue;per.set(s,(per.get(s)||0)+1)}
+  for(const g of ghosts){if(g.picked)continue;per.set(g.slot,(per.get(g.slot)||0)+1)}
+  let cnt=0;
+  for(let i=0;i<SLOTS_N;i++){const L=per.get(i)||0;const s=rack[i];
+    plateIM.setColorAt(i,lin(!L?SLOT_COL.free:L>1?SLOT_COL.multi:SLOT_COL.one));if(!L)continue;
+    const n=Math.min(3,L),sc=PSC*(n===1?1:n===2?0.82:0.66);
+    for(let j=0;j<n;j++){const m=mat4(s.x+OFFS[n][j],s.y,s.z,0,s.face<0?Math.PI:0.35*j,0,sc);for(const im of partIM)im.setMatrixAt(cnt,m);cnt++}}
+  for(const im of partIM){im.count=cnt;im.instanceMatrix.needsUpdate=true}
   plateIM.instanceColor.needsUpdate=true}
 /* slot highlight */
 const hl=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(2.42,1.86,1.16)),new THREE.LineBasicMaterial({color:0xf2b705}));hl.visible=false;S.add(hl);
@@ -1020,7 +1001,7 @@ function stockAnim(ev){
     for(let i=0;i<ins.length;i+=per){const grp=ins.slice(i,i+per);pals.push({slot:grp[0].slot,uids:grp.filter(a=>a.uid).map(a=>a.uid)})}
     for(const a of ins)if(a.uid&&findUid(a.uid))hiddenIn.add(a.uid);
     for(let i=0;i<pals.length;i+=PER_TRUCK)truckQ.push(pals.slice(i,i+PER_TRUCK))}
-  for(const o of outs.slice(0,Math.max(0,MAX_OUT-ghosts.length)))ghosts.push({id:++ghostNo,slot:o.slot,size:o.size,num:o.num,picked:false,taken:false});
+  for(const o of outs.slice(0,Math.max(0,MAX_OUT-ghosts.length)))ghosts.push({id:++ghostNo,slot:o.slot,num:o.num,picked:false,taken:false});
   visDirty=true}
 function animPending(){const pal=truckQ.reduce((n,t)=>n+t.length,0)+inTrucks.reduce((n,t)=>n+(t?t.n+t.pend:0),0)+inBuf.filter(s=>s.pallet).length+fls.filter(f=>f.job).length;
   return{inn:pal,out:ghosts.filter(g=>!g.done).length}}
@@ -1083,7 +1064,7 @@ function assignAnim(){
   for(const w of logW){if(w.job)continue;const gh=ghosts.find(g=>!g.taken);if(!gh)continue;gh.taken=true;w.job=true;const s=rack[gh.slot];const st=stopOf(s);
     const zx=PZ.x-6+Math.random()*12,zz=PZ.z-3+Math.random()*6;
     w.steps=[{t:'go',pts:[{x:-29,z:w.g.position.z},{x:-29,z:st.z},{x:st.x,z:st.z}]},{t:'face',a:st.face},{t:'wait',d:0.6},
-      {t:'fn',f:()=>{gh.picked=true;visDirty=true;const m=partMesh(gh.size,gh.size==='L'?0.45:gh.size==='M'?0.6:0.8);w.g.add(m);m.position.set(0,0.95,0.38);w.load=m}},
+      {t:'fn',f:()=>{gh.picked=true;visDirty=true;const m=partMesh(0.55);w.g.add(m);m.position.set(0,0.95,0.38);w.load=m}},
       {t:'go',pts:[{x:-29,z:st.z},{x:-29,z:-24.5},{x:-38.6,z:-24.5},{x:-38.6,z:-31},{x:zx,z:zz}]},{t:'wait',d:0.3},
       {t:'fn',f:()=>{const m=w.load;w.load=null;animG.attach(m);settle(m,new THREE.Vector3(zx,0,zz+0.5),()=>fadeOut(m,2.5));gh.done=true;ghosts=ghosts.filter(g=>g!==gh)}},
       {t:'go',pts:[{x:-38.6,z:-31},{x:-38.6,z:-24.5},{x:w.home.x,z:-24.5},{x:w.home.x,z:w.home.z}]},{t:'face',a:Math.PI/2},{t:'fn',f:()=>{w.job=null}}]}}
@@ -1115,13 +1096,12 @@ const dash=v=>v===null||v===undefined||v===''?'—':v;
 const fmtDT=d=>(d instanceof Date?d:new Date(d)).toLocaleString(lang==='ru'?'ru-RU':'de-DE',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
 const SRC_N={arbeitzeit:'src_az',file:'src_file',input:'src_in'},SRC_C={arbeitzeit:'a',file:'f',input:'i'};
 function srcBadge(o){const s=o.src||'input';return`<span class="src ${SRC_C[s]||'i'}" title="${esc((o.label||'')+(o.at?' · '+fmtDT(o.at):''))}">${T(SRC_N[s]||'src_in')}</span>`}
-const ICON={S:'./icons/parts-s.png',M:'./icons/parts-m.png',L:'./icons/parts-l.png',U:'./icons/parts-u.png'};
-const icon=(c,cls)=>`<img class="pic${cls?' '+cls:''}" src="${ICON[c||'U']}" alt="${esc(T('cls_'+(c||'U')))}" title="${esc(T('cls_'+(c||'U')))}" width="30" height="30" loading="lazy">`;
-const clsBadge=c=>`<span class="cls ${c||'U'}">${c||T('clsShort_U')}</span>`;
-const qtyTxt=p=>has(p.qty)?p.qty+' '+T('u_pcs'):'<span class="mut">'+T('notSetS')+'</span>';
+const ICON='./icons/part.png';   // one generic part icon for every part
+const icon=cls=>`<img class="pic${cls?' '+cls:''}" src="${ICON}" alt="" width="30" height="30" loading="lazy">`;
+const qtyN=p=>has(p.qty)?fmtN(p.qty):'—';
+const qtyTxt=p=>has(p.qty)?fmtN(p.qty)+' '+T('u_pcs'):'<span class="mut">'+T('notSetS')+'</span>';
 const setH=(el,h)=>{if(el.innerHTML!==h)el.innerHTML=h};
 function segSel(id,attr,v){document.querySelectorAll('#'+id+' button').forEach(x=>x.setAttribute('aria-pressed',x.dataset[attr]===String(v)))}
-function toast(msg,cls){const el=$('stStat');if(el){el.innerHTML='<span class="'+(cls||'okc')+'">'+esc(msg)+'</span>'}}
 
 /* ================= TABS ================= */
 const TABS=['ov','stock','entry','data','params','report'];
@@ -1134,12 +1114,12 @@ document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>showTab(b.dat
 $('sheetBtn').onclick=()=>{const c=$('panel').classList.toggle('collapsed');$('sheetBtn').textContent=c?'▴':'▾'};
 
 /* ================= HUD / BANNER / LEGEND / QUEUE ================= */
-const HUD=[{k:'pos',l:'h_pos'},{k:'qty',l:'h_qty'},{k:'slots',l:'h_slots'},{k:'cls',l:'h_cls'},{k:'ucls',l:'h_ucls'},{k:'noloc',l:'h_noloc'}];
+const HUD=[{k:'pos',l:'h_pos'},{k:'qty',l:'h_qty'},{k:'slots',l:'h_slots'},{k:'free',l:'h_free'},{k:'noloc',l:'h_noloc'}];
 $('hud').innerHTML=HUD.map(h=>`<div class="stat" id="hc-${h.k}"><span data-t="${h.l}"></span><b id="hv-${h.k}">—</b>${h.k==='slots'?'<div class="meter"><i id="hMeter"></i></div>':''}</div>`).join('');
 const kbad=(k,K)=>{const d=KPIS.find(x=>x.k===k);return!!(d&&d.bad&&K[k]!==null&&d.bad(K))};
 function renderTop(K){const set=(k,v,bad)=>{$('hv-'+k).textContent=v;$('hc-'+k).classList.toggle('hot',!!bad)};
-  set('pos',K.pos?String(K.pos):'—');set('qty',K.qty===null?'—':K.qty+' '+T('u_pcs'));set('slots',K.pos?K.slots+' / '+SLOTS_N:'— / '+SLOTS_N,kbad('occ',K));$('hMeter').style.width=Math.min(100,K.occ||0).toFixed(1)+'%';
-  set('cls',K.pos?K.cls.S.n+' / '+K.cls.M.n+' / '+K.cls.L.n:'—');set('ucls',K.pos?String(K.ucls):'—');set('noloc',K.pos?String(K.noloc):'—');
+  set('pos',K.pos?fmtN(K.pos):'—');set('qty',K.qty===null||!K.pos?'—':fmtN(K.qty)+' '+T('u_pcs'));set('slots',K.pos?fmtN(K.slots)+' / '+SLOTS_N:'— / '+SLOTS_N,kbad('occ',K));$('hMeter').style.width=Math.min(100,K.occ||0).toFixed(1)+'%';
+  set('free',fmtN(K.free));set('noloc',K.pos?fmtN(K.noloc):'—');
   const d=new Date();$('clock').innerHTML=`<b>${pad2(d.getHours())}:${pad2(d.getMinutes())}</b> · ${pad2(d.getDate())}.${pad2(d.getMonth()+1)}.${d.getFullYear()}`;
   setH($('banner'),`<span class="tag">${T('ban_tag')}</span><span>${T('ban_txt')}</span>${lastChange?'<span class="mut">· '+T('ban_last')+': '+fmtDT(lastChange)+'</span>':''}`);
   $('bannerRow').hidden=uxDismissed('banner');
@@ -1147,11 +1127,11 @@ function renderTop(K){const set=(k,v,bad)=>{$('hv-'+k).textContent=v;$('hc-'+k).
   let em=null;if(!PARTS.length&&!uxDismissed('em:empty'))em=`<div class="ehead"><span>${esc(T('ux_emptyFact'))}</span>${XB('em:empty')}</div><div class="rowb"><button class="pri" data-entry="new">${T('ux_addData2')}</button><button data-go="data">${T('ux_loadFile')}</button></div>`;
   $('emptyMsg').hidden=!em;if(em)setH($('emptyMsg'),em);
   const q=animPending();const qs=[];if(q.inn)qs.push('🚚 '+T('q_in').replace('%n',q.inn));if(q.out)qs.push('⇢ '+T('q_out').replace('%n',q.out));
-  if(qs.length&&animSpeed>1.2)qs.push('×'+animSpeed.toFixed(1)+' '+T('q_fast'));
+  if(qs.length&&animSpeed>1.2)qs.push('×'+fmtN(animSpeed,1)+' '+T('q_fast'));
   const qq=$('animQ');qq.hidden=!qs.length;if(qs.length)setH(qq,esc(qs.join(' · '))+(scene==='campus'?'<br><small>'+esc(T('q_campus'))+'</small>':''))}
-function renderLegend(){const it=[['S',CLS_COL.S],['M',CLS_COL.M],['L',CLS_COL.L],['U',CLS_COL.U]];
-  $('legend').innerHTML=it.map(([c,col])=>`<div><img src="${ICON[c]}" alt=""><i style="background:#${col.toString(16).padStart(6,'0')}"></i>${T('leg_'+c)}</div>`).join('')+
-    `<div><i style="background:#3a4450"></i>${T('leg_free')}</div><div><i style="background:#3f78d9"></i>${T('leg_truck')}</div><div><i style="background:var(--log)"></i>${T('leg_log')}</div>`}
+function renderLegend(){const hx=c=>'#'+c.toString(16).padStart(6,'0');
+  $('legend').innerHTML=`<div><i style="background:${hx(SLOT_COL.one)}"></i>${T('leg_one')}</div><div><i style="background:${hx(SLOT_COL.multi)}"></i>${T('leg_multi')}</div>`+
+    `<div><i style="background:${hx(SLOT_COL.free)}"></i>${T('leg_free')}</div><div><i style="background:#3f78d9"></i>${T('leg_truck')}</div><div><i style="background:var(--log)"></i>${T('leg_log')}</div>`}
 
 /* ================= OVERVIEW ================= */
 const unitT=u=>u&&u.startsWith('u_')?T(u):u;
@@ -1160,38 +1140,37 @@ function renderOverview(K){$('ovStart').hidden=PARTS.length>0;
   const A=alertsOf(K);setH($('alerts'),A.length?A.map(a=>'<div>'+esc(a)+'</div>').join(''):'<div class="note" style="border:0;background:none;padding:0">'+T('noAlerts')+'</div>');
   setH($('kpis'),KPIS.map(d=>{const v=K[d.k];const na=v===null||!K.pos;const cls=na?'na':d.bad&&d.bad(K)?'bad':'';const j=d.jump&&!has(P.th_rackLo)&&!has(P.th_rackHi)?` data-jump="${d.jump}" role="button" tabindex="0" title="${esc(T('ux_setThr'))}"`:'';
     return`<div class="kpi ${cls}"${j}><span title="${esc(T('k_'+d.k))}">${T('k_'+d.k)}</span><b>${na?'—':fmtN(v,d.d)}</b><small>${na?'':esc(unitT(d.u))}</small>${d.th?`<em>${esc(d.th())}</em>`:''}</div>`}).join(''));
-  setH($('clsBox'),['S','M','L','U'].map(c=>`<div class="clsbox" data-cf="${c}" role="button" tabindex="0">${icon(c,'lg')}<div><b>${K.cls[c].n} ${T('per_pos')}</b><span>${T('cls_'+c)}${K.cls[c].n?' · '+K.cls[c].q+' '+T('u_pcs'):''}</span></div></div>`).join(''));
   const rec=PARTS.slice().sort((a,b)=>b.at-a.at).slice(0,8);
-  setH($('recentT'),rec.length?rec.map(p=>`<tr class="click" data-uid="${p.uid}"><td class="ic">${icon(p.size)}</td><td class="l">${esc(p.num)}</td><td class="l">${esc(p.loc||'—')}</td><td>${has(p.qty)?p.qty:'—'}</td><td class="l">${srcBadge(p)}</td><td class="l mut">${fmtDT(p.at)}</td></tr>`).join(''):`<tr><td class="l mut">${T('empty_stock')}</td></tr>`)}
-document.addEventListener('click',e=>{const c=e.target.closest('[data-cf]');if(c){stockF=c.dataset.cf;segSel('stockFilt','f',stockF);showPanelTab('stock')}});
+  setH($('recentT'),rec.length?rec.map(p=>`<tr class="click" data-uid="${p.uid}"><td class="ic">${icon()}</td><td class="l">${esc(p.num)}</td><td class="l">${esc(p.loc||'—')}</td><td>${qtyN(p)}</td><td class="l">${srcBadge(p)}</td><td class="l mut">${fmtDT(p.at)}</td></tr>`).join(''):`<tr><td class="l mut">${T('empty_stock')}</td></tr>`)}
 
 /* ================= STOCK LIST ================= */
 $('stockQ').oninput=()=>{stockQ=$('stockQ').value;renderStock()};
 document.querySelectorAll('#stockFilt button').forEach(b=>b.onclick=()=>{stockF=b.dataset.f;segSel('stockFilt','f',stockF);renderStock()});
 function stockFiltered(){const q=azNorm(stockQ);return sortParts(PARTS).filter(p=>{
-  if(stockF==='noloc'?slotOf(p.loc)>=0:stockF!=='all'&&(p.size||'U')!==stockF)return false;
+  if(stockF==='noloc'&&slotOf(p.loc)>=0)return false;if(stockF==='noqty'&&has(p.qty))return false;
   return!q||azNorm(p.num).includes(q)||azNorm(p.name).includes(q)||azNorm(p.loc).includes(q)})}
 function renderStock(){const L=stockFiltered();$('stockCnt').textContent=L.length+' / '+PARTS.length;
-  setH($('stockT'),!PARTS.length?`<tr><td class="l mut wrap" colspan="8">${T('empty_stock')}<div class="rowb" style="margin-top:6px"><button class="pri" data-entry="new">${T('ux_addData2')}</button><button data-go="data">${T('ux_loadFile')}</button></div></td></tr>`
-    :L.length?L.slice(0,500).map(p=>`<tr class="click" data-uid="${p.uid}"><td class="ic">${icon(p.size)}</td><td class="l">${esc(p.num)}</td><td class="l wrap">${esc(p.name)}</td><td class="l">${esc(p.loc||'—')}${p.loc&&slotOf(p.loc)<0?' <span class="mut" title="'+esc(T('loc_off'))+'">⚠</span>':''}</td><td>${has(p.qty)?p.qty:'<span class="mut">—</span>'}</td><td class="l">${clsBadge(p.size)}</td><td class="l">${srcBadge(p)}</td>
+  setH($('stockT'),!PARTS.length?`<tr><td class="l mut wrap" colspan="7">${T('empty_stock')}<div class="rowb" style="margin-top:6px"><button class="pri" data-entry="new">${T('ux_addData2')}</button><button data-go="data">${T('ux_loadFile')}</button></div></td></tr>`
+    :L.length?L.slice(0,500).map(p=>`<tr class="click" data-uid="${p.uid}"><td class="ic">${icon()}</td><td class="l">${esc(p.num)}</td><td class="l wrap">${esc(p.name)}</td><td class="l">${esc(p.loc||'—')}${p.loc&&slotOf(p.loc)<0?' <span class="mut" title="'+esc(T('loc_off'))+'">⚠</span>':''}</td><td>${has(p.qty)?fmtN(p.qty):'<span class="mut">—</span>'}</td><td class="l">${srcBadge(p)}</td>
       <td style="white-space:nowrap"><button class="x" data-ed="${p.uid}" title="${esc(T('edit'))}">✎</button> <button class="x" data-dl="${p.uid}" title="${esc(T('del'))}">✕</button></td></tr>`).join('')
-    :`<tr><td class="l mut" colspan="8">${T('nf')}</td></tr>`)}
+    :`<tr><td class="l mut" colspan="7">${T('nf')}</td></tr>`)}
 document.addEventListener('click',e=>{const ed=e.target.closest('[data-ed]');if(ed){e.stopPropagation();openEntry(+ed.dataset.ed);return}
   const dl=e.target.closest('[data-dl]');if(dl){e.stopPropagation();askDel(+dl.dataset.dl);return}
   const tr=e.target.closest('tr[data-uid]');if(tr){const p=findUid(+tr.dataset.uid);if(!p)return;const s=slotOf(p.loc);if(s>=0)ensureHub(()=>{flySlot(s);openSlot(s)});else openEntry(p.uid)}});
-function askDel(uid){const p=findUid(uid);if(!p)return;if(!confirm(T('del_confirm').replace('%s',p.num)))return;if(entEdit===uid)entEdit=null;delPart(uid);afterChange();toastEntry(T('e_deleted')+': '+p.num)}
+function askDel(uid){const p=findUid(uid);if(!p)return;if(!confirm(T('del_confirm').replace('%s',p.num)))return;if(entEdit===uid){entEdit=null;buildEntry()}delPart(uid);afterChange();
+  const msg='<span class="okc">'+esc(T('e_deleted')+': '+p.num)+'</span>';$('entStat').innerHTML=msg;$('stockStat').innerHTML=msg}   // shown on the tab where the deletion happened (Lager list or Eingabe)
 
 /* ================= MANUAL ENTRY ================= */
 function buildEntry(){const p=entEdit?findUid(entEdit):null;if(entEdit&&!p)entEdit=null;
   $('ef-num').value=p?p.num:($('ef-num').dataset.keep||'');$('ef-num').dataset.keep='';$('ef-name').value=p?p.name:'';$('ef-loc').value=p?p.loc:($('ef-loc').dataset.pre||'');$('ef-loc').dataset.pre='';
-  $('ef-qty').value=p&&has(p.qty)?p.qty:'';const sz=p&&p.size?p.size:'';document.querySelectorAll('input[name="ef-size"]').forEach(r=>r.checked=r.value===sz);
+  $('ef-qty').value=p&&has(p.qty)?p.qty:'';
   $('entStat').textContent='';entLabels();
   setH($('numList'),sortParts(PARTS).slice(0,800).map(x=>`<option value="${esc(x.num)}"></option>`).join(''));renderRecentInput()}
 function entLabels(){const p=entEdit?findUid(entEdit):null;$('entSave').textContent=p?T('e_update'):T('e_add');$('entCancel').hidden=!p;$('entDel').hidden=!p;locNote()}
 function locNote(){const v=$('ef-loc').value.trim();$('locNote').innerHTML=!v?esc(T('loc_hint')):slotOf(v)>=0?'<span class="okc">'+esc(T('loc_ok')+': '+slotName(slotOf(v)))+'</span>':'<span class="err">'+esc(T('loc_off'))+'</span>'}
 $('ef-loc').oninput=locNote;
 $('ef-num').onchange=()=>{if(entEdit)return;const p=findNum($('ef-num').value);if(p){entEdit=p.uid;buildEntry();$('entStat').innerHTML='<span class="okc">'+esc(T('e_exists'))+'</span>'}};
-function readEntry(){const d={num:$('ef-num').value.trim(),name:$('ef-name').value.trim(),loc:$('ef-loc').value.trim(),size:(document.querySelector('input[name="ef-size"]:checked')||{}).value||null};
+function readEntry(){const d={num:$('ef-num').value.trim(),name:$('ef-name').value.trim(),loc:$('ef-loc').value.trim()};
   const q=$('ef-qty').value.trim();if(q!==''){const n=+q.replace(',','.');if(!isFinite(n)||n<0||Math.round(n)!==n){$('ef-qty').classList.add('inv');return{err:T('badVal')+': '+T('ef_qty')}}d.qty=n}else d.qty=null;
   $('ef-qty').classList.remove('inv');if(!d.num){$('ef-num').classList.add('inv');return{err:T('e_needNum')}}$('ef-num').classList.remove('inv');return{d}}
 function toastEntry(m){$('entStat').innerHTML='<span class="okc">'+esc(m)+'</span>'}
@@ -1201,14 +1180,13 @@ $('entSave').onclick=()=>{const r=readEntry();if(r.err){$('entStat').innerHTML='
 $('entCancel').onclick=()=>{entEdit=null;buildEntry()};
 $('entDel').onclick=()=>{if(entEdit)askDel(entEdit);buildEntry()};
 function renderRecentInput(){const L=PARTS.filter(p=>p.src==='input').sort((a,b)=>b.at-a.at).slice(0,12);
-  setH($('entT'),L.length?L.map(p=>`<tr class="click" data-uid="${p.uid}"><td class="ic">${icon(p.size)}</td><td class="l">${esc(p.num)}</td><td class="l">${esc(p.loc||'—')}</td><td>${has(p.qty)?p.qty:'—'}</td><td class="l mut">${fmtDT(p.at)}</td><td style="white-space:nowrap"><button class="x" data-ed="${p.uid}">✎</button> <button class="x" data-dl="${p.uid}">✕</button></td></tr>`).join('')
+  setH($('entT'),L.length?L.map(p=>`<tr class="click" data-uid="${p.uid}"><td class="ic">${icon()}</td><td class="l">${esc(p.num)}</td><td class="l">${esc(p.loc||'—')}</td><td>${qtyN(p)}</td><td class="l mut">${fmtDT(p.at)}</td><td style="white-space:nowrap"><button class="x" data-ed="${p.uid}">✎</button> <button class="x" data-dl="${p.uid}">✕</button></td></tr>`).join('')
     :`<tr><td class="l mut">${T('e_none')}</td></tr>`)}
-$('szSel').innerHTML=['S','M','L',''].map(c=>`<label><input type="radio" name="ef-size" value="${c}">${icon(c||'U')}<span data-t="${c?'leg_'+c:'cls_U'}"></span></label>`).join('');
 
 /* ================= SLOT CARD (3D) ================= */
 function openSlot(i){selSlot=i;highlightSlot(i);if(i<0){$('slotCard').hidden=true;return}const L=partsInSlot(i);
   $('slotCard').hidden=false;setH($('slotCard'),`<div class="shead"><h2>${T('slot')} ${slotName(i)}</h2>${XBs()}</div>`+
-    (L.length?L.slice(0,12).map(p=>`<div class="sp-item">${icon(p.size,'lg')}<div class="t"><b>${esc(p.num)}</b> ${clsBadge(p.size)}<div>${esc(p.name||'—')}</div></div><span class="qtyb">${qtyTxt(p)}</span><button class="x" data-ed="${p.uid}" title="${esc(T('edit'))}">✎</button></div>`).join('')+(L.length>12?`<div class="note">${T('slot_more').replace('%n',L.length-12)}</div>`:'')
+    (L.length?L.slice(0,12).map(p=>`<div class="sp-item">${icon('lg')}<div class="t"><b>${esc(p.num)}</b><div>${esc(p.name||'—')}</div></div><span class="qtyb">${qtyTxt(p)}</span><button class="x" data-ed="${p.uid}" title="${esc(T('edit'))}">✎</button></div>`).join('')+(L.length>12?`<div class="note">${T('slot_more').replace('%n',L.length-12)}</div>`:'')
       :`<div class="note">${T('slot_empty')}</div>`)+`<div class="rowb" style="margin-top:8px"><button class="pri" data-addslot="${i}">${T('slot_add')}</button></div>`)}
 const XBs=()=>`<button class="xbtn" data-closeslot="1" aria-label="${esc(T('ux_close'))}">×</button>`;
 document.addEventListener('click',e=>{if(e.target.closest('[data-closeslot]')){openSlot(-1);return}const a=e.target.closest('[data-addslot]');if(a){entEdit=null;$('ef-loc').dataset.pre=slotName(+a.dataset.addslot);openEntry('new')}});
@@ -1218,7 +1196,7 @@ let pendingImp=null;
 function previewImport(res,src,label,note){const plan=importPlan(res);pendingImp={plan,src,label,note};
   $('impBody').innerHTML=`<div class="kv"><span>${T('imp_src')}</span><b>${esc(label)}</b><span>${T('imp_rows')}</span><b>${plan.rows}</b><span>${T('imp_new')}</span><b class="okc">${plan.add.length}</b><span>${T('imp_upd')}</span><b>${plan.upd.length}</b><span>${T('imp_same')}</span><b>${plan.same}</b>`+
     `<span>${T('imp_up')} / ${T('imp_down')}</span><b>${plan.up} / ${plan.down}</b><span>${T('imp_miss')}</span><b class="${plan.miss.length?'err':''}">${plan.miss.length}</b></div>`+
-    (plan.skip?`<div class="note">${T('imp_skip')}: ${plan.skip}</div>`:'')+(plan.hasQty?'':`<div class="note">${T('imp_noQty')}</div>`)+(plan.hasSize?'':`<div class="note">${T('imp_noSize')}</div>`)+(note?`<div class="note">${esc(note)}</div>`:'')+
+    (plan.skip?`<div class="note">${T('imp_skip')}: ${plan.skip}</div>`:'')+(plan.hasQty?'':`<div class="note">${T('imp_noQty')}</div>`)+(note?`<div class="note">${esc(note)}</div>`:'')+
     `<div style="margin-top:10px;display:flex;flex-direction:column;gap:4px"><label class="ck"><input type="radio" name="impMode" value="add" checked><span>${esc(T('imp_add'))}</span></label>`+
     `<label class="ck"><input type="radio" name="impMode" value="full"${plan.miss.length?'':' disabled'}><span>${esc(T('imp_full').replace('%n',plan.miss.length))}</span></label></div>`;
   $('impDlg').hidden=false;$('impApply').focus()}
@@ -1313,15 +1291,15 @@ $('pImp').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)r
 /* ================= STOCK REPORT (print + CSV) ================= */
 function renderReport(){const K=compute();const L=sortParts(PARTS);const byLoc=L.filter(p=>slotOf(p.loc)>=0).sort((a,b)=>slotOf(a.loc)-slotOf(b.loc)),noLoc=L.filter(p=>slotOf(p.loc)<0);
   const srcs=[...new Map(PARTS.map(p=>[p.src+'|'+p.label,p])).values()];
-  const row=p=>`<tr><td class="ic">${icon(p.size)}</td><td class="l">${esc(p.loc||'—')}</td><td class="l">${esc(p.num)}</td><td class="l">${esc(p.name)}</td><td>${has(p.qty)?p.qty:'—'}</td><td class="l">${p.size||'—'}</td><td class="l">${esc(T(SRC_N[p.src]||'src_in'))}</td></tr>`;
-  const hd=`<thead><tr><th></th><th class="l">${T('c_loc')}</th><th class="l">${T('c_num')}</th><th class="l">${T('c_name')}</th><th>${T('c_qty')}, ${T('u_pcs')}</th><th class="l">${T('c_cls')}</th><th class="l">${T('c_src')}</th></tr></thead>`;
+  const row=p=>`<tr><td class="ic">${icon()}</td><td class="l">${esc(p.loc||'—')}</td><td class="l">${esc(p.num)}</td><td class="l">${esc(p.name)}</td><td>${qtyN(p)}</td><td class="l">${esc(T(SRC_N[p.src]||'src_in'))}</td></tr>`;
+  const hd=`<thead><tr><th></th><th class="l">${T('c_loc')}</th><th class="l">${T('c_num')}</th><th class="l">${T('c_name')}</th><th>${T('c_qty')}, ${T('u_pcs')}</th><th class="l">${T('c_src')}</th></tr></thead>`;
   $('report').innerHTML=`<h2>${T('rep_title')} · Logistik-Hub</h2><div class="meta">${T('rep_gen')}: ${fmtDT(new Date())}<br>${T('rep_sources')}: ${srcs.length?srcs.map(p=>esc(T(SRC_N[p.src]||'src_in'))+' «'+esc(p.label)+'»').join('; '):'—'}</div>
-    <h4>${T('kpiH')}</h4><table><tbody>${KPIS.map(d=>`<tr><td class="l">${T('k_'+d.k)}</td><td>${K.pos&&K[d.k]!==null?fmtN(K[d.k],d.d)+' '+esc(unitT(d.u)):'—'}</td></tr>`).join('')}${['S','M','L','U'].map(c=>`<tr><td class="l">${T('cls_'+c)}</td><td>${K.cls[c].n} ${T('per_pos')} · ${K.cls[c].q} ${T('u_pcs')}</td></tr>`).join('')}</tbody></table>
-    <h4>${T('rep_list')} (${byLoc.length})</h4><table>${hd}<tbody>${byLoc.map(row).join('')||'<tr><td colspan="7" class="l">—</td></tr>'}</tbody></table>
-    <h4>${T('rep_noloc')} (${noLoc.length})</h4><table>${hd}<tbody>${noLoc.map(row).join('')||'<tr><td colspan="7" class="l">—</td></tr>'}</tbody></table>`}
+    <h4>${T('kpiH')}</h4><table><tbody>${KPIS.map(d=>`<tr><td class="l">${T('k_'+d.k)}</td><td>${K.pos&&K[d.k]!==null?fmtN(K[d.k],d.d)+' '+esc(unitT(d.u)):'—'}</td></tr>`).join('')}</tbody></table>
+    <h4>${T('rep_list')} (${byLoc.length})</h4><table>${hd}<tbody>${byLoc.map(row).join('')||'<tr><td colspan="6" class="l">—</td></tr>'}</tbody></table>
+    <h4>${T('rep_noloc')} (${noLoc.length})</h4><table>${hd}<tbody>${noLoc.map(row).join('')||'<tr><td colspan="6" class="l">—</td></tr>'}</tbody></table>`}
 function reportCSV(){const q=v=>{v=v===null||v===undefined?'':String(v);return /[";\r\n,]|^\s|\s$/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
-  const H=lang==='de'?['Teilenummer','Lagerort','Bezeichnung','Menge','Größe']:['Номер детали','Место','Название','Количество','Размер'];
-  return '\ufeff'+[H.join(';')].concat(sortParts(PARTS).map(p=>[p.num,p.loc,p.name,has(p.qty)?p.qty:'',p.size||''].map(q).join(';'))).join('\r\n')+'\r\n'}
+  const H=lang==='de'?['Teilenummer','Lagerort','Bezeichnung','Menge']:['Номер детали','Место','Название','Количество'];
+  return '\ufeff'+[H.join(';')].concat(sortParts(PARTS).map(p=>[p.num,p.loc,p.name,has(p.qty)?p.qty:''].map(q).join(';'))).join('\r\n')+'\r\n'}
 $('repPrint').onclick=()=>{renderReport();window.print()};
 $('repCsv').onclick=()=>{const d=new Date();download('lager-'+d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate())+'.csv',reportCSV(),'text/csv')};
 
@@ -1333,20 +1311,20 @@ function renderAll(){const K=compute();renderTop(K);
   renderPanel(true)}
 $('wallBtn').onclick=e=>{walls.visible=!walls.visible;e.currentTarget.setAttribute('aria-pressed',walls.visible)};
 
-const HELP={ru:`<p><b>В программе нет встроенных данных и значений по умолчанию.</b> Запас ведётся <b>в деталях (шт.)</b>: номер детали, место, название, количество и класс размера S/M/L. Он меняется только ручным вводом и импортом. Машины, паллеты и погрузчики в 3D — лишь изображение этих изменений: при добавлении приезжает машина и погрузчики ставят паллеты в ячейки, где затем видна деталь; при удалении логисты выносят детали в зону «Производство» за складом. На данные анимация не влияет.</p>
+const HELP={ru:`<p><b>В программе нет встроенных данных и значений по умолчанию.</b> Запас ведётся <b>в деталях (шт.)</b>: номер детали, место, название и количество. Он меняется только ручным вводом и импортом. Машины, паллеты и погрузчики в 3D — лишь изображение этих изменений: при добавлении приезжает машина и погрузчики ставят паллеты в ячейки, где затем видна деталь; при удалении логисты выносят детали в зону «Производство» за складом. На данные анимация не влияет.</p>
 <h3>Arbeitzeit → Logistik-Hub (односторонне, только чтение)</h3>
 <p><b>CSV склада Arbeitzeit</b> (Склад → «Экспорт CSV», <code>lager-ГГГГ-ММ-ДД.csv</code>): UTF-8 с BOM, разделитель <code>;</code>, строки CRLF, первая строка — заголовок на языке Arbeitzeit, колонки по позиции:</p>
 <table><tr><th class="l">RU</th><td class="l"><code>Номер детали;Место;Название</code></td></tr><tr><th class="l">DE</th><td class="l"><code>Teilenummer;Lagerort;Bezeichnung</code></td></tr><tr><th class="l">EN</th><td class="l"><code>Part number;Location;Name</code></td></tr></table>
-<p>Необязательно можно добавить колонки <code>Количество</code> (Menge, qty, шт) и <code>Размер</code> (Größe, size, класс) — значения <code>S/M/L</code>, <code>small/medium/large</code>, <code>klein/mittel/groß</code>, <code>маленькая/средняя/большая</code>. Без класса деталь показывается «без класса» — класс не придумывается. Без количества у существующей детали количество не меняется.</p>
+<p>Необязательно можно добавить колонку <code>Количество</code> (Menge, qty, шт). Без количества у существующей детали количество не меняется. Другие колонки игнорируются.</p>
 <p><b>«Синхронизировать с Arbeitzeit»</b> — если обе программы открыты с одного origin: читается <code>localStorage['timetracking-lager-parts']</code> (только чтение). <b>Адрес GET</b> — необязательный URL с JSON/CSV; автообновление только добавляет/обновляет.</p>
-<h3>Свои CSV / JSON</h3><p>Поля (регистр не важен, RU/DE/EN): <code>num</code> (part_number, Teilenummer, артикул, sku), <code>loc</code> (location, Lagerort, место), <code>name</code> (Bezeichnung, название), <code>qty</code> (Menge, количество, шт.), <code>size</code> (Größe, размер). JSON: массив объектов или <code>{"parts":[…]}</code>.</p>
+<h3>Свои CSV / JSON</h3><p>Поля (регистр не важен, RU/DE/EN): <code>num</code> (part_number, Teilenummer, артикул, sku), <code>loc</code> (location, Lagerort, место), <code>name</code> (Bezeichnung, название), <code>qty</code> (Menge, количество, шт.). JSON: массив объектов или <code>{"parts":[…]}</code>.</p>
 <h3>Импорт: добавить или полная инвентаризация</h3><p>Перед применением показывается предпросмотр: новые, изменённые, без изменений и «есть на складе, но нет в файле». По умолчанию ничего не удаляется; «Полная инвентаризация» удаляет со склада детали, которых нет в файле.</p>
 <h3>Место</h3><p><code>R1-05-2</code> = ряд 1–4, секция 1–20, ярус 1–3 (240 ячеек). Другое место сохраняется, но в 3D не показывается.</p>`,
-de:`<p><b>Das Programm enthält keine eingebauten Daten oder Standardwerte.</b> Der Bestand wird <b>in Teilen (Stk)</b> geführt: Teilenummer, Lagerort, Bezeichnung, Menge und Größenklasse S/M/L. Er ändert sich nur durch manuelle Eingabe und Import. LKW, Paletten und Stapler in 3D visualisieren nur diese Änderungen: beim Hinzufügen kommt ein LKW und Stapler bringen die Paletten an den Platz, wo danach das Teil sichtbar ist; beim Löschen tragen Logistiker die Teile in die Zone „Produktion“ hinter dem Lager. Die Animation ändert keine Daten.</p>
+de:`<p><b>Das Programm enthält keine eingebauten Daten oder Standardwerte.</b> Der Bestand wird <b>in Teilen (Stk)</b> geführt: Teilenummer, Lagerort, Bezeichnung und Menge. Er ändert sich nur durch manuelle Eingabe und Import. LKW, Paletten und Stapler in 3D visualisieren nur diese Änderungen: beim Hinzufügen kommt ein LKW und Stapler bringen die Paletten an den Platz, wo danach das Teil sichtbar ist; beim Löschen tragen Logistiker die Teile in die Zone „Produktion“ hinter dem Lager. Die Animation ändert keine Daten.</p>
 <h3>Arbeitzeit → Logistik-Hub (nur lesen)</h3>
-<p><b>Arbeitzeit-Lager-CSV</b> (Lager → „CSV exportieren“): UTF-8 mit BOM, <code>;</code>, CRLF, Kopfzeile <code>Teilenummer;Lagerort;Bezeichnung</code> (DE), <code>Номер детали;Место;Название</code> (RU), <code>Part number;Location;Name</code> (EN). Optional zusätzliche Spalten <code>Menge</code> und <code>Größe</code> (<code>S/M/L</code>, <code>klein/mittel/groß</code>, <code>small/medium/large</code>). Ohne Klasse: „ohne Klasse“ — es wird nichts erfunden. Ohne Menge bleibt eine bestehende Menge unverändert.</p>
+<p><b>Arbeitzeit-Lager-CSV</b> (Lager → „CSV exportieren“): UTF-8 mit BOM, <code>;</code>, CRLF, Kopfzeile <code>Teilenummer;Lagerort;Bezeichnung</code> (DE), <code>Номер детали;Место;Название</code> (RU), <code>Part number;Location;Name</code> (EN). Optional eine zusätzliche Spalte <code>Menge</code>. Ohne Menge bleibt eine bestehende Menge unverändert. Andere Spalten werden ignoriert.</p>
 <p><b>„Mit Arbeitzeit synchronisieren“</b> — nur bei gleichem Origin: <code>localStorage['timetracking-lager-parts']</code> wird nur gelesen. <b>GET-Adresse</b> optional; Auto-Aktualisierung fügt nur hinzu/aktualisiert.</p>
-<h3>Eigene CSV / JSON</h3><p>Felder: <code>num</code> (Teilenummer, part_number, sku), <code>loc</code> (Lagerort, location), <code>name</code> (Bezeichnung), <code>qty</code> (Menge), <code>size</code> (Größe). JSON: Array oder <code>{"parts":[…]}</code>.</p>
+<h3>Eigene CSV / JSON</h3><p>Felder: <code>num</code> (Teilenummer, part_number, sku), <code>loc</code> (Lagerort, location), <code>name</code> (Bezeichnung), <code>qty</code> (Menge). JSON: Array oder <code>{"parts":[…]}</code>.</p>
 <h3>Import: hinzufügen oder vollständige Inventur</h3><p>Vor dem Anwenden erscheint eine Vorschau. Standard: nichts wird gelöscht; „Vollständige Inventur“ löscht Teile, die nicht in der Datei stehen.</p>
 <h3>Lagerort</h3><p><code>R1-05-2</code> = Reihe 1–4, Feld 1–20, Ebene 1–3 (240 Plätze). Andere Orte werden gespeichert, aber nicht in 3D gezeigt.</p>`};
 
@@ -1527,7 +1505,7 @@ $('installM').onclick=()=>{toggleMenu(false);$('installBtn').click()};
 new MutationObserver(syncInstall).observe($('installBtn'),{attributes:true,childList:true,characterData:true,subtree:true});
 
 /* ---- on-device storage status (store.js) ---- */
-const fmtB=b=>b==null?'—':b<1048576?(b/1024).toFixed(b<10240?1:0)+' KB':b<1073741824?(b/1048576).toFixed(1)+' MB':(b/1073741824).toFixed(1)+' GB';
+const fmtB=b=>b==null?'—':b<1048576?fmtN(b/1024,b<10240?1:0)+' KB':b<1073741824?fmtN(b/1048576,1)+' MB':fmtN(b/1073741824,1)+' GB';
 let storeBarGone=false;
 function renderStore(){const s=LHStore.status;const yn=s.persisted===true?T('st_yes'):s.persisted===false?T('st_no'):T('st_unk');
   const l1=T('st_line').replace('%s',yn),l2=T('st_use').replace('%u',fmtB(s.usage)).replace('%q',fmtB(s.quota)),
@@ -1615,7 +1593,7 @@ fontsReady.then(()=>{applyLang();const s=clickables[1].userData.sign;if(s){const
 document.body.dataset.tab=curTab;buildEntry();applyLang();requestAnimationFrame(frame);
 /* test hooks (read-only views + navigation; no data is created by them) */
 window.__hub={get scene(){return scene},enterHub,leaveHub,showTab,setView,flySlot,openSlot,setLang:l=>{lang=l;applyLang()},
-  kpi:()=>compute(),params:()=>JSON.parse(JSON.stringify(P)),parts:()=>PARTS.map(p=>({num:p.num,loc:p.loc,name:p.name,qty:p.qty,size:p.size,src:p.src})),
+  kpi:()=>compute(),params:()=>JSON.parse(JSON.stringify(P)),parts:()=>PARTS.map(p=>({num:p.num,loc:p.loc,name:p.name,qty:p.qty,src:p.src})),
   anim:()=>{const q=animPending();return{inn:q.inn,out:q.out,hidden:hiddenIn.size,ghosts:ghosts.length,trucks:inTrucks.filter(Boolean).length,docked:inTrucks.filter(t=>t&&t.state==='dock').length,queue:truckQ.length,on:animOn,
     dockCarry:dockW.filter(w=>w.load).length,flCarry:fls.filter(f=>f.load).map(f=>[f.g.position.x,f.car.position.y,f.g.position.z]),logCarry:logW.filter(w=>w.load).map(w=>[w.g.position.x,0,w.g.position.z])}},
   setAnim:toggleAnim,walls:v=>{walls.visible=v;$('wallBtn').setAttribute('aria-pressed',v)},quality:()=>({mode:qMode,eff:effQ(),pr:R.getPixelRatio(),shadows:R.shadowMap.enabled}),reportCSV,stepAnim:(s)=>{let n=Math.ceil(s/0.05);while(n-->0)animStep(0.05);if(visDirty)rebuildRack()},
